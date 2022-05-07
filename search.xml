@@ -1,0 +1,1076 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Git代码回滚</title>
+    <url>/relaxed/git-back/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&ensp;在我们开发过程中，因各种原因，避免不了将业务代码回滚至指定版本，或者具体一些到某次commit。<br>下面我们将具体步骤及具体实现做分析。</p>
+<h2 id="操作前阅读"><a href="#操作前阅读" class="headerlink" title="操作前阅读"></a>操作前阅读</h2><p>&ensp; 在代码回归操作过程中主要 围绕 git reset 命令进行，该命令会把版本库和工作目录改变为已知状态。具体来讲，git reset 调整 HEAD 引用指向指定的提交，默认情况下还会更新索引以匹配该提交。根据需要，git reset 命令也可以修改工作目录以呈现指定提交代表的项目修订版本。</p>
+<ul>
+<li><p>git reset 命令有三个主要选项</p>
+</li>
+<li><p><code>--soft</code><br>&ensp; 会将 HEAD 引用指向指定提交。索引和工作目录的内容保持不变。这个版本的命令有“最小”影响，只改变一个符号引用的状态使其指向一个新提交。</p>
+</li>
+<li><p><code>--mixed</code><br>&ensp; 会将 HEAD 指向指定提交。索引内容也跟着改变以符合指定提交的树结构，但是工作目录中的内容保持不变。这个版本的命令将索引变成你刚刚暂存该提交全部变化时的状态，它会显示工作目录中还有什么修改。–mixed 是 git reset 的默认模式。</p>
+</li>
+<li><p><code>--hard</code><br>&ensp; 这条命令将 HEAD 引用指向给定提交。索引的内容也跟着改变以符合给定提交的树结构。此外，工作目录的内容也随之改变以反映给定提交表示的树的状态。当改变工作目录的时候，整个目录结构都改成给定提交对应的样子。做的修改都将丢失，新文件将被删除。在给定提交中但不在工作目录中的文件将恢复回来。</p>
+</li>
+</ul>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><p>&ensp;一般情况下，我们分为三个步骤就可以解决完代码回滚操作</p>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><ul>
+<li>执行 git log命令查看日志，获取需要回退的版本号<br>例如:<br><img src="https://s3.bmp.ovh/imgs/2022/03/0c4021f483bb41cf.jpg"></li>
+</ul>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>执行 git reset –-soft <commit id> ，如 git reset –soft 4f5e9a90edeadcc45d85f43bd861a837fa7ce4c7 ，重置至指定版本的提交</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>执行 git push -f origin <branch_name> 强制提交当前版本号</p>
+<ul>
+<li>&gt;··&lt; 此时恭喜你，你的代码回滚成功了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown 语法</title>
+    <url>/relaxed/markdown-grammar/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> &ensp; Markdown语法的基本使用</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://s3.bmp.ovh/imgs/2022/03/5e25d102468382c1.jpg"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>MarkDown基础语法使用参考</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><ul>
+<li><p>语法<br>一级标题用一个#，二级标题## ….最多展示六级标题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">####### 六级标题</span><br></pre></td></tr></table></figure></li>
+<li><p>效果</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></li>
+</ul>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul>
+<li><p>加粗</p>
+<ul>
+<li>语法<br> 要加粗的文本前后用两个 ** 符号包裹起来</li>
+<li>效果<br> <strong>我是加粗后的字体</strong></li>
+</ul>
+</li>
+<li><p>斜体</p>
+<ul>
+<li>语法<br> 要倾斜的文本前后用一个 * 符号包裹起来</li>
+<li>效果</li>
+<li>我是倾斜后的字体*</li>
+</ul>
+</li>
+<li><p>斜体&amp;加粗<br>*语法<br>  要倾斜并且加粗的文本前后用三个 ***  符号包裹起来<br>*效果</p>
+</li>
+<li><p><strong>我是倾斜并且加粗后的字体</strong>*</p>
+</li>
+<li><p>删除线</p>
+<ul>
+<li>语法<br> 要加删除线的文本左右分别用两个 ~~ 符号包起来</li>
+<li>效果<br><del>我是添加删除线的字体</del></li>
+</ul>
+</li>
+</ul>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><ul>
+<li><p>空格</p>
+<ul>
+<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">插入一个空格 &amp;nbsp;   </span><br><span class="line">插入两个空格 &amp;ensp;  </span><br><span class="line">插入四个空格 &amp;emsp;   </span><br></pre></td></tr></table></figure>
+或者使用全角空格。即：在全角输入状态下直接使用空格键就ok了</li>
+<li>效果<br>&nbsp;   插入一个空格文本<br>&ensp;   插入两个空格文本<br>&emsp;   插入四个空格文本<br>　　全角按了两个空格文本😎</li>
+</ul>
+</li>
+<li><p>换行</p>
+<ul>
+<li>语法<br>使用 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</li>
+<li>效果<br>我在这里需要换行啦<br>精彩内容在仍在继续…</li>
+</ul>
+</li>
+</ul>
+<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><ul>
+<li><p>单个段落块引用</p>
+<ul>
+<li>语法<br>要创建单个段落块引用，请在段落前添加一个 &gt; 符号。</li>
+<li>效果<blockquote>
+<p>我是单个段落引用</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>多个段落块引用</p>
+<ul>
+<li>语法<br> 要创建单个段落块引用，请在段落前与段落之间添加 &gt; 符号。</li>
+<li>效果<blockquote>
+<p>我是段落一</p>
+<p>我是段落二</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>嵌套块引用</p>
+</li>
+<li><p>语法<br> 在要嵌套的段落前添加一个 &gt;&gt; 符号。</p>
+</li>
+<li><p>效果</p>
+<blockquote>
+<p>我是段落一</p>
+<blockquote>
+<p>我是段落二并且需要嵌套引用</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>无限嵌套引用…</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
+<li><p>有序列表</p>
+<ul>
+<li><p>语法<br> 列表项前添加数字并紧跟一个英文句点 1. 2. 3. 等等 …</p>
+</li>
+<li><p>效果</p>
+</li>
+</ul>
+<p>1.有序列表<br>2.有序列表<br>3.有序列表<br>…</p>
+</li>
+<li><p>无序列表<br>为了兼容，请不要在同一个列表中混用不同的分隔符，最好选定一种分隔符使用</p>
+<ul>
+<li>语法<br>无序列表用 - + * 任意一种都可以</li>
+<li>效果<ul>
+<li>无序列表</li>
+<li>无序列表</li>
+<li>无序列表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><p>代码块高亮</p>
+<ul>
+<li>语法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">（```）java</span><br><span class="line">  这个写代码块</span><br><span class="line">  注意：（```）这个写法是防止符号被转义，正常写去掉（）只写 ``` 就好了</span><br><span class="line">（```）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>单行代码块</p>
+<ul>
+<li>语法<br>单行代码块使用 `  `包裹</li>
+<li>效果<br> <code> System.out.println(&quot;Hello World!&quot;); </code></li>
+</ul>
+</li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li>语法<br>[图片上传中…(image-9df155-1642153968831)]<br>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</li>
+<li>效果<br><img src="https://s3.bmp.ovh/imgs/2022/03/3c7eea0313d87901.jpeg"></li>
+</ul>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><ul>
+<li>语法<br>为了兼容性，请在分隔线的前后均添加空白行<br>三个以上 — 或 ***</li>
+<li>效果</li>
+</ul>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><ul>
+<li>语法<br>要创建链接，请将链接文本括在方括号（例如 [Duck Duck Go]）中，后面紧跟着括在圆括号中的 URL（例如 (<a href="https://duckduckgo.com/">https://duckduckgo.com</a>) ）。</li>
+<li>效果<br>My favorite search engine is <a href="https://duckduckgo.com/">Duck Duck Go</a>.</li>
+</ul>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>因简书不支持流程图，可以参考：<br><a href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
+<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| --- | --- |</span><br><span class="line">| 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 |</span><br></pre></td></tr></table></figure></li>
+<li>效果<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody></table>
+</li>
+<li>对齐方式<ul>
+<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br></pre></td></tr></table></figure></li>
+<li>效果<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">内容</td>
+<td align="right">内容</td>
+<td align="center">内容</td>
+</tr>
+<tr>
+<td align="left">内容</td>
+<td align="right">内容</td>
+<td align="center">内容</td>
+</tr>
+</tbody></table>
+<h2 id="网址、电子邮件地址"><a href="#网址、电子邮件地址" class="headerlink" title="网址、电子邮件地址"></a>网址、电子邮件地址</h2></li>
+</ul>
+</li>
+<li>语法<br> 将 URL 或电子邮件地址括在&lt;&gt;里</li>
+<li>效果<br><a href="https://www.google.com.hk/">https://www.google.com.hk/</a><br><a href="mailto:&#116;&#x65;&#x73;&#116;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#116;&#x65;&#x73;&#116;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></li>
+</ul>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。<br>字符|名称<br>–|–<br>| \ | 反斜杠<br>| * | 星号（asterisk） |<br>| _ | 下划线（underscore） |<br>| { } | 花括号（curly braces） |<br>| [ ] | 方括号（brackets） |<br>| &lt; &gt; | angle brackets |<br>| ( ) | 圆括号或括号（parentheses） |<br>| # | 井号（pound sign） |<br>| + | 加号（plus sign） |<br>| - | 减号（minus sign） (也叫连字符 hyphen) |<br>| . | 句点（dot） |<br>| ! | 感叹号（exclamation mark） |</p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git常用命令</title>
+    <url>/relaxed/git-command/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用Git 命令前，先了解几个关键词的概念</p>
+<ul>
+<li>  工作区（workSpace）</li>
+<li>  暂缓区（stage/index）</li>
+<li>  本地仓库（Repository）</li>
+<li>  远程仓库（Remote）</li>
+</ul>
+<p><img src="https://s3.bmp.ovh/imgs/2022/03/64aa14707f10bfb0.png"></p>
+<h1 id="Git-常见命令速查表"><a href="#Git-常见命令速查表" class="headerlink" title="Git 常见命令速查表"></a>Git 常见命令速查表</h1><p><img src="https://ftp.bmp.ovh/imgs/2020/04/5991c03f6436c41b.jpg"></p>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><ul>
+<li><p>初始化本地git仓库（创建新仓库）</p>
+<blockquote>
+<p><code>git init</code></p>
+</blockquote>
+</li>
+<li><p>配置用户名</p>
+<blockquote>
+<p><code>git config --global user.name &quot;xxx&quot; </code></p>
+</blockquote>
+</li>
+<li><p>配置邮件</p>
+<blockquote>
+<p><code>git config --global user.email &quot;xxx@xxx.com&quot; </code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="修改与提交"><a href="#修改与提交" class="headerlink" title="修改与提交"></a>修改与提交</h2><ul>
+<li><p>查看当前版本状态（是否修改）</p>
+<blockquote>
+<p><code>git status</code></p>
+</blockquote>
+</li>
+<li><p>添加修改的指定文件至index(暂缓区)</p>
+<blockquote>
+<p><code>git add &quot;xxx&quot;</code></p>
+</blockquote>
+</li>
+<li><p>添加修改的所有文件至index(暂缓区)</p>
+<blockquote>
+<p><code>git add .</code></p>
+</blockquote>
+</li>
+<li><p> 提交文件 “xxx”为本次提交的说明”</p>
+<blockquote>
+<p><code>git commit -m &#39;xxx&#39; </code></p>
+</blockquote>
+</li>
+<li><p>合并上一次提交<br>git commit -a -m ‘xxx’   ==&gt;&gt;（等价于） git add .   git commit -m ‘xxx’</p>
+<blockquote>
+<p><code>git commit --amend -m &#39;xxx&#39;</code></p>
+</blockquote>
+</li>
+<li><p>将add和commit合为一步</p>
+<blockquote>
+<p><code>git commit -am &#39;xxx&#39;</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="查看历史提交"><a href="#查看历史提交" class="headerlink" title="查看历史提交"></a>查看历史提交</h2><ul>
+<li><p>显示提交日志</p>
+<blockquote>
+<p><code>git log </code></p>
+</blockquote>
+</li>
+<li><p> 显示1行日志 -n为n行 git log -5</p>
+<blockquote>
+<p><code>git log -1</code></p>
+</blockquote>
+</li>
+<li><p>显示提交日志及相关变动文件</p>
+<blockquote>
+<p><code>git log --stat </code></p>
+</blockquote>
+</li>
+<li><p>可查看该文件以前每一次push的修改内容）  </p>
+<blockquote>
+<p><code>git log -p + xxx(文件名)</code></p>
+</blockquote>
+</li>
+<li><p>只查看该文件当前这一次的push内容）</p>
+<blockquote>
+<p><code>git log - p -1 + xxx(文件名</code></p>
+</blockquote>
+</li>
+<li><p>显示HEAD提交日志</p>
+<blockquote>
+<p><code>git show HEAD </code></p>
+</blockquote>
+</li>
+<li><p>显示某个提交的详细内容</p>
+<blockquote>
+<p><code>git show dfb02e6e4f2f7b573337763e5c0013802e392818 </code></p>
+</blockquote>
+</li>
+<li><p>显示已存在的tag</p>
+<blockquote>
+<p><code>git tag</code></p>
+</blockquote>
+</li>
+<li><p>增加v2.0的tag</p>
+<blockquote>
+<p><code>git tag -a v2.0  -m &#39;xxx&#39;  </code></p>
+</blockquote>
+</li>
+<li><p>显示v2.0的日志及详细内容</p>
+<blockquote>
+<p><code>git show v2.0 </code></p>
+</blockquote>
+</li>
+<li><p>显示v2.0的日志</p>
+<blockquote>
+<p><code>git log v2.0  </code></p>
+</blockquote>
+</li>
+<li><p>显示所有未添加至index的变更</p>
+<blockquote>
+<p><code>git diff </code></p>
+</blockquote>
+</li>
+<li><p>显示所有已添加index但还未commit的变更</p>
+<blockquote>
+<p><code>git diff --cached </code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><ul>
+<li><p>撤销 add 过的文件 xxx（指定文件名）</p>
+<blockquote>
+<p><code>git reset HEAR &quot;xxx&quot; </code></p>
+</blockquote>
+</li>
+<li><p> 撤销上一次 add 过的所有文件</p>
+<blockquote>
+<p><code>git reset HEAR </code></p>
+</blockquote>
+</li>
+<li><p>放弃单个的文件修改</p>
+<blockquote>
+<p><code>git checkout -- xxx</code></p>
+</blockquote>
+</li>
+<li><p> 放弃所有的文件修改</p>
+<blockquote>
+<p><code>git checkout .</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h2><ul>
+<li><p>显示本地所有分支</p>
+<blockquote>
+<p><code>git branch</code></p>
+</blockquote>
+</li>
+<li><p>显示远程、本地所有分支</p>
+<blockquote>
+<p><code>git branch -a</code></p>
+</blockquote>
+</li>
+<li><p>切换至指定分支下</p>
+<blockquote>
+<p><code>git checkout &quot;xxx&quot;</code></p>
+</blockquote>
+</li>
+<li><p>创建新的分支</p>
+<blockquote>
+<p><code>git branch ”xxx“   xxx为新的分支名</code></p>
+</blockquote>
+</li>
+<li><p>创建新的分支并切换至当前新建的分支下</p>
+<blockquote>
+<p><code>git check -b &quot;xxx&quot;</code></p>
+</blockquote>
+</li>
+<li><p>删除指定分支</p>
+<blockquote>
+<p><code>git branch -d &quot;xxx&quot;</code></p>
+</blockquote>
+</li>
+<li><p>强制删除指定分支</p>
+<blockquote>
+<p><code>git branch -D &quot;xxx&quot;</code></p>
+</blockquote>
+</li>
+<li><p>删除tag</p>
+<blockquote>
+<p><code>git tag -d &quot;xxx&quot;</code></p>
+</blockquote>
+</li>
+<li><p>清除本地缓存分支</p>
+<blockquote>
+<p><code>git remote prune origin</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="合并已衍合"><a href="#合并已衍合" class="headerlink" title="合并已衍合"></a>合并已衍合</h2><ul>
+<li><p>合并远程master分支至当前分支</p>
+<blockquote>
+<p><code>git merge origin/master </code></p>
+</blockquote>
+</li>
+<li><p>合并提交ff44785404a8e的修改</p>
+<blockquote>
+<p><code>git cherry-pick &quot;ff44785404a8e&quot;</code></p>
+</blockquote>
+</li>
+<li><p>将当前分支push到远程master分支</p>
+<blockquote>
+<p><code>git push origin master </code></p>
+</blockquote>
+</li>
+<li><p>把所有本地tags推送到远程仓库</p>
+<blockquote>
+<p><code>git push --tags</code></p>
+</blockquote>
+</li>
+<li><p>获取所有远程分支（不更新本地分支）</p>
+<blockquote>
+<p><code>git fetch </code></p>
+</blockquote>
+</li>
+<li><p> 获取所有原创分支并清除服务器上已删掉的分支</p>
+<blockquote>
+<p><code>git fetch --prune </code></p>
+</blockquote>
+</li>
+<li><p>获取远程分支master并merge到当前分支</p>
+<blockquote>
+<p><code>git pull origin master </code></p>
+</blockquote>
+</li>
+<li><p>重命名文件README为README2</p>
+<blockquote>
+<p><code>git mv README README2</code></p>
+</blockquote>
+</li>
+<li><p>将当前版本重置为HEAD（通常用于merge失败回退）</p>
+<blockquote>
+<p><code>git reset --hard HEAD </code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="暂存"><a href="#暂存" class="headerlink" title="暂存"></a>暂存</h2><ul>
+<li><p>暂存当前修改，将所有至为HEAD状态</p>
+<blockquote>
+<p><code>git stash </code></p>
+</blockquote>
+</li>
+<li><p> 查看所有暂存</p>
+<blockquote>
+<p><code>git stash list</code></p>
+</blockquote>
+</li>
+<li><p>恢复暂存文件</p>
+<blockquote>
+<p><code>git stash pop </code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="操作远程"><a href="#操作远程" class="headerlink" title="操作远程"></a>操作远程</h2><ul>
+<li><p>本地分支推送到远程仓库</p>
+<blockquote>
+<p><code>git push origin master </code></p>
+</blockquote>
+</li>
+<li><p>-u选项指定一个默认主机</p>
+<blockquote>
+<p><code>git push -u origin</code></p>
+</blockquote>
+</li>
+<li><p>不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机</p>
+<blockquote>
+<p><code>git push --all origin </code></p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Glide-缓存那些事儿</title>
+    <url>/relaxed/glide-%E7%BC%93%E5%AD%98%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</url>
+    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p> &ensp;在我们开发的时候对图片加载是必须使用的 这篇文章我们就聊聊Glide缓存。</p>
+<h2 id="Glide-缓存分几种"><a href="#Glide-缓存分几种" class="headerlink" title="Glide 缓存分几种"></a>Glide 缓存分几种</h2><p>答：缓存分为两种：内存缓存、磁盘缓存</p>
+<p>内存缓存：<br>内存缓存又分为两种：一种是：弱引用缓存、一种是： Lrucache缓存。<br>往下看Glide内存缓存是如何实现的，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;R&gt; LoadStatus <span class="title function_">load</span><span class="params">(</span></span><br><span class="line"><span class="params">      GlideContext glideContext,</span></span><br><span class="line"><span class="params">      Object model,</span></span><br><span class="line"><span class="params">      Key signature,</span></span><br><span class="line"><span class="params">      <span class="type">int</span> width,</span></span><br><span class="line"><span class="params">      <span class="type">int</span> height,</span></span><br><span class="line"><span class="params">      Class&lt;?&gt; resourceClass,</span></span><br><span class="line"><span class="params">      Class&lt;R&gt; transcodeClass,</span></span><br><span class="line"><span class="params">      Priority priority,</span></span><br><span class="line"><span class="params">      DiskCacheStrategy diskCacheStrategy,</span></span><br><span class="line"><span class="params">      Map&lt;Class&lt;?&gt;, Transformation&lt;?&gt;&gt; transformations,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isTransformationRequired,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isScaleOnlyOrNoTransform,</span></span><br><span class="line"><span class="params">      Options options,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isMemoryCacheable,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> useUnlimitedSourceExecutorPool,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> useAnimationPool,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> onlyRetrieveFromCache,</span></span><br><span class="line"><span class="params">      ResourceCallback cb,</span></span><br><span class="line"><span class="params">      Executor callbackExecutor)</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> VERBOSE_IS_LOGGABLE ? LogTime.getLogTime() : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成key</span></span><br><span class="line">    <span class="type">EngineKey</span> <span class="variable">key</span> <span class="operator">=</span></span><br><span class="line">        keyFactory.buildKey(</span><br><span class="line">            model,</span><br><span class="line">            signature,</span><br><span class="line">            width,</span><br><span class="line">            height,</span><br><span class="line">            transformations,</span><br><span class="line">            resourceClass,</span><br><span class="line">            transcodeClass,</span><br><span class="line">            options);</span><br><span class="line"></span><br><span class="line">    EngineResource&lt;?&gt; memoryResource;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">    <span class="comment">//进到loadFromMemory方法里面看看做了什么</span></span><br><span class="line">      memoryResource = loadFromMemory(key, isMemoryCacheable, startTime);</span><br><span class="line"></span><br><span class="line">     ...</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Nullable</span></span><br><span class="line">  <span class="keyword">private</span> EngineResource&lt;?&gt; loadFromMemory(</span><br><span class="line">      EngineKey key, <span class="type">boolean</span> isMemoryCacheable, <span class="type">long</span> startTime) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isMemoryCacheable) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 弱引用</span></span><br><span class="line">    EngineResource&lt;?&gt; active = loadFromActiveResources(key);</span><br><span class="line">    <span class="keyword">if</span> (active != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VERBOSE_IS_LOGGABLE) &#123;</span><br><span class="line">        logWithTimeAndKey(<span class="string">&quot;Loaded resource from active resources&quot;</span>, startTime, key);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> active;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// LruCaChe</span></span><br><span class="line">    EngineResource&lt;?&gt; cached = loadFromCache(key);</span><br><span class="line">    <span class="keyword">if</span> (cached != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VERBOSE_IS_LOGGABLE) &#123;</span><br><span class="line">        logWithTimeAndKey(<span class="string">&quot;Loaded resource from cache&quot;</span>, startTime, key);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> cached;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果返回null ，从网络或其它地方获取</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到，Engine类中load方法图片加载策略，其中生成key的参数中包含width 、height<br> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">EngineKey</span> <span class="variable">key</span> <span class="operator">=</span> keyFactory.buildKey(model, signature, width, height, transformations,</span><br><span class="line">      resourceClass, transcodeClass, options);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li> width  &amp; height 就是ImageView的尺寸，生成key时为什么会传入ImageView的尺寸呢？</li>
+<li>注：Glide 通过key读取缓存图片时，会校验当前的图片尺寸是否与imageView的尺寸相等，如果相等直接取出来显示，如果不相等，会重新生成新的缓存数据。</li>
+</ul>
+<h3 id="弱引用缓存："><a href="#弱引用缓存：" class="headerlink" title="弱引用缓存："></a>弱引用缓存：</h3><p> &ensp;接着往下看，首先从弱引用中获取数据：<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  EngineResource&lt;?&gt; active = loadFromActiveResources(key, isMemoryCacheable);</span><br><span class="line">  //方法内部实现</span><br><span class="line"> @Nullable</span><br><span class="line">  private EngineResource&lt;?&gt; loadFromActiveResources(Key key) &#123;</span><br><span class="line">    EngineResource&lt;?&gt; active = activeResources.get(key);</span><br><span class="line">    if (active != null) &#123;</span><br><span class="line">      active.acquire();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return active;</span><br><span class="line">  &#125;</span><br><span class="line">//方法 acquire</span><br><span class="line">synchronized void acquire() &#123;</span><br><span class="line">    if (isRecycled) &#123;</span><br><span class="line">      throw new IllegalStateException(&quot;Cannot acquire a recycled resource&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    ++acquired;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>注：如果弱引用中获取到数据，计数器acquired+1，如果获取不到active对象在合适的时机被回收，走LruCaChe缓存，接着往下看：</li>
+</ul>
+<h3 id="LruCaChe缓存："><a href="#LruCaChe缓存：" class="headerlink" title="LruCaChe缓存："></a>LruCaChe缓存：</h3><p>弱引用中未获取到数据，则通过LruCaChe获取，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> EngineResource&lt;?&gt; loadFromCache(Key key) &#123;</span><br><span class="line">    EngineResource&lt;?&gt; cached = getEngineResourceFromCache(key);</span><br><span class="line">    <span class="keyword">if</span> (cached != <span class="literal">null</span>) &#123;</span><br><span class="line">      cached.acquire();</span><br><span class="line">      activeResources.activate(key, cached);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cached;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：如果cached对象不为空，则调用activeResources.activate方法将其加入弱引用缓存中，且计数器acquired+1</li>
+</ul>
+<p>进入getEngineResourceFromCache方法看下具体实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> EngineResource&lt;?&gt; getEngineResourceFromCache(Key key) &#123;</span><br><span class="line">  Resource&lt;?&gt; cached = cache.remove(key);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> EngineResource&lt;?&gt; result;</span><br><span class="line">  <span class="keyword">if</span> (cached == <span class="literal">null</span>) &#123;</span><br><span class="line">    result = <span class="literal">null</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cached <span class="keyword">instanceof</span> EngineResource) &#123;</span><br><span class="line">    <span class="comment">// Save an object allocation if we&#x27;ve cached an EngineResource (the typical case).</span></span><br><span class="line">    result = (EngineResource&lt;?&gt;) cached;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result =</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">EngineResource</span>&lt;&gt;(</span><br><span class="line">            cached, <span class="comment">/*isMemoryCacheable=*/</span> <span class="literal">true</span>, <span class="comment">/*isRecyclable=*/</span> <span class="literal">true</span>, key, <span class="comment">/*listener=*/</span> <span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结：之所以采用内存缓存是为防止应用重复将图片读入到内存，造成内存资源浪费。</p>
+<ul>
+<li>注：从上面源码中我们看到，读内存缓存的流程为：先从弱引用中取数据，如果取到，计数器acquired+1返回，如果不存在，则从LruCaChe中取，如果取到，计数器acquired+1返回。如果LruCaChe中不存key对应在数据，则会走磁盘缓存，往下看：</li>
+</ul>
+<h3 id="磁盘缓存："><a href="#磁盘缓存：" class="headerlink" title="磁盘缓存："></a>磁盘缓存：</h3><p>先了解以下磁盘缓存的策略有哪些?</p>
+<ul>
+<li>ALL:缓存原图(SOURCE)和处理图(RESULT)</li>
+<li>NONE:什么都不缓存</li>
+<li>SOURCE:只缓存原图(SOURCE)</li>
+<li>RESULT:只缓存处理图(RESULT) —默认值</li>
+</ul>
+<p>上面讲的是内存读取数据，如果内存没有取到，则Glide会从磁盘缓存取数据，通过EngineJob开启线程池去加载图片。这里有2个关键类：DecodeJob 和EngineJob。<br>一个图片的加载在 DecodeJob 这个类中，这个任务由 EngineJob 这个线程池去执行的。去到 run 方法，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runWrapped</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (runReason) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        stage = getNextStage(Stage.INITIALIZE);</span><br><span class="line">        currentGenerator = getNextGenerator();</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SWITCH_TO_SOURCE_SERVICE:</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DECODE_DATA:</span><br><span class="line">        decodeFromRetrievedData();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Unrecognized run reason: &quot;</span> + runReason);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>EngineJob 内部维护了线程池，用来管理资源加载，当资源加载完毕的时候通知回调；<br>DecodeJob是线程池中的一个任务。<br>&ensp;磁盘缓存是通过DiskLruCache来管理的,根据不同的缓存策略，会有2种类型的图片：</p>
+<ul>
+<li>DATA：原始图片</li>
+<li> RESOURCE：转换后的图片<br>磁盘缓存依次通过ResourcesCacheGenerator（转换过的缓存数据）、SourceGenerator（未经转换的原始的缓存数据）、DataCacheGenerator（网络获取图片数据后根据缓存策略的不同去缓存不同的图片到磁盘上）来获取缓存数据。<br>总结：防止应用重复的从网络或者其他地方下载和读取数据</li>
+</ul>
+<p>关于LruCache源码请看：<a href="/relaxed/LinkedHashMap-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" title="LinkedHashMap原理分析">LinkedHashMap原理分析</a><br>关于LinedHashMap原理请看： <a href="/relaxed/LruCache-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" title="LruCache原理分析">LruCache原理分析</a></p>
+<h2 id="Glide读取图片，获取顺序"><a href="#Glide读取图片，获取顺序" class="headerlink" title="Glide读取图片，获取顺序"></a>Glide读取图片，获取顺序</h2><p>答： 弱引用–&gt; LruCache算法–&gt; 磁盘缓存(DiskLruCache)</p>
+<blockquote>
+<p>我们APP中加载某张图片时，先去弱引用（WeakReference）中寻找，如果弱引用（WeakReference）中有，则从WeakReference中取出图片使用，如果WeakReference中没有图片则去LruCache中寻找图片，如果LruCache中有，则取出来使用，并将该图片放入WeakReference中，如果LruCache中没有，则从磁盘缓存/网络中加载图片。</p>
+</blockquote>
+<h2 id="Glide缓存图片，写入顺序"><a href="#Glide缓存图片，写入顺序" class="headerlink" title="Glide缓存图片，写入顺序"></a>Glide缓存图片，写入顺序</h2><p>答：弱引用 –&gt; LruCache算法 –&gt; 磁盘缓存中(DiskLruCache)</p>
+<blockquote>
+<p>当图片不存在的时候，会先从网络下载，然后将图片存入弱引用中，Glide会采用一个acquired变量用来记录图片被引用的次数<br>当acquired变量大于0的时候，说明图片正在使用中，也就是将图片放到弱引用缓存当中。<br>如果acquired变量等于0了，说明图片已经不再被使用了，那么此时会调用方法来释放资源，首先会将缓存图片从弱引用中移除，然后再将它put到LruResourceCache当中。<br>这样也就实现了正在使用中的图片使用弱引用来进行缓存，不在使用中的图片使用LruCache来进行缓存的功能。<br>上面磁盘缓存分析中我们知道，当图片资源加载到DecodeJob这个类中，任务是有EngineJob线程池去执行的，假设我们将缓存策略设置为 DiskCacheStrategy.ALL 分析下源码中是如何执行的，下面先看runWrapped方法：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runWrapped</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (runReason) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        stage = getNextStage(Stage.INITIALIZE);</span><br><span class="line">        currentGenerator = getNextGenerator();</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SWITCH_TO_SOURCE_SERVICE:</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DECODE_DATA:</span><br><span class="line">        decodeFromRetrievedData();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Unrecognized run reason: &quot;</span> + runReason);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注：由于我们的策略为DiskCacheStrategy.ALL 所以diskCacheStrategy.decodeCachedResource() 为true，即会解析解码的流程，所以 State 被赋值为 Stage.RESOURCE_CACHE，如下：<br>进入getNextStage方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Stage <span class="title function_">getNextStage</span><span class="params">(Stage current)</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (current) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        <span class="keyword">return</span> diskCacheStrategy.decodeCachedResource()</span><br><span class="line">            ? Stage.RESOURCE_CACHE</span><br><span class="line">            : getNextStage(Stage.RESOURCE_CACHE);</span><br><span class="line">      <span class="keyword">case</span> RESOURCE_CACHE:</span><br><span class="line">        <span class="keyword">return</span> diskCacheStrategy.decodeCachedData()</span><br><span class="line">            ? Stage.DATA_CACHE</span><br><span class="line">            : getNextStage(Stage.DATA_CACHE);</span><br><span class="line">      <span class="keyword">case</span> DATA_CACHE:</span><br><span class="line">        <span class="comment">// Skip loading from source if the user opted to only retrieve the resource from cache.</span></span><br><span class="line">        <span class="keyword">return</span> onlyRetrieveFromCache ? Stage.FINISHED : Stage.SOURCE;</span><br><span class="line">      <span class="keyword">case</span> SOURCE:</span><br><span class="line">      <span class="keyword">case</span> FINISHED:</span><br><span class="line">        <span class="keyword">return</span> Stage.FINISHED;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Unrecognized stage: &quot;</span> + current);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注：currentGenerator = getNextGenerator() 拿到当前的解码器为 ResourceCacheGenerator然后 调用 runGenerators() 方法。看下里面具体实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runGenerators</span><span class="params">()</span> &#123;</span><br><span class="line">    currentThread = Thread.currentThread();</span><br><span class="line">    startFetchTime = LogTime.getLogTime();</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">isStarted</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!isCancelled</span><br><span class="line">        &amp;&amp; currentGenerator != <span class="literal">null</span></span><br><span class="line">        &amp;&amp; !(isStarted = currentGenerator.startNext())) &#123;</span><br><span class="line">      stage = getNextStage(stage);</span><br><span class="line">      currentGenerator = getNextGenerator();</span><br><span class="line"></span><br><span class="line">      <span class="comment">//stage == Stage.SOURCE)时退出,并调用reschedule</span></span><br><span class="line">      <span class="keyword">if</span> (stage == Stage.SOURCE) &#123;</span><br><span class="line">        reschedule();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// We&#x27;ve run out of stages and generators, give up.</span></span><br><span class="line">    <span class="keyword">if</span> ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) &#123;</span><br><span class="line">      notifyFailed();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Otherwise a generator started a new load and we expect to be called back in</span></span><br><span class="line">    <span class="comment">// onDataFetcherReady.</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注：while循环不断通过startNext()解析不同的缓存策略，直到stage == Stage.SOURCE 后退出。</p>
+<p>下面进入startNext看下源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startNext</span><span class="params">()</span> &#123;</span><br><span class="line">   List&lt;Key&gt; sourceIds = helper.getCacheKeys();</span><br><span class="line">   ...</span><br><span class="line"> <span class="comment">//由于第一次拿不到key，while会一直查找</span></span><br><span class="line">   <span class="keyword">while</span> (modelLoaders == <span class="literal">null</span> || !hasNextModelLoader()) &#123;</span><br><span class="line">     resourceClassIndex++;</span><br><span class="line">     <span class="keyword">if</span> (resourceClassIndex &gt;= resourceClasses.size()) &#123;</span><br><span class="line">       sourceIdIndex++;</span><br><span class="line">   <span class="comment">//直到返回false</span></span><br><span class="line">       <span class="keyword">if</span> (sourceIdIndex &gt;= sourceIds.size()) &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       resourceClassIndex = <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="type">Key</span> <span class="variable">sourceId</span> <span class="operator">=</span> sourceIds.get(sourceIdIndex);</span><br><span class="line">    ...</span><br><span class="line">     currentKey =</span><br><span class="line">         <span class="keyword">new</span> <span class="title class_">ResourceCacheKey</span>( <span class="comment">// NOPMD AvoidInstantiatingObjectsInLoops</span></span><br><span class="line">             helper.getArrayPool(),</span><br><span class="line">             sourceId,</span><br><span class="line">             helper.getSignature(),</span><br><span class="line">             helper.getWidth(),</span><br><span class="line">             helper.getHeight(),</span><br><span class="line">             transformation,</span><br><span class="line">             resourceClass,</span><br><span class="line">             helper.getOptions());</span><br><span class="line">     cacheFile = helper.getDiskCache().get(currentKey);</span><br><span class="line">     <span class="keyword">if</span> (cacheFile != <span class="literal">null</span>) &#123;</span><br><span class="line">       sourceKey = sourceId;</span><br><span class="line">       modelLoaders = helper.getModelLoaders(cacheFile);</span><br><span class="line">       modelLoaderIndex = <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   loadData = <span class="literal">null</span>;</span><br><span class="line">   <span class="type">boolean</span> <span class="variable">started</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">while</span> (!started &amp;&amp; hasNextModelLoader()) &#123;</span><br><span class="line">     ModelLoader&lt;File, ?&gt; modelLoader = modelLoaders.get(modelLoaderIndex++);</span><br><span class="line">     loadData =</span><br><span class="line">         modelLoader.buildLoadData(</span><br><span class="line">             cacheFile, helper.getWidth(), helper.getHeight(), helper.getOptions());</span><br><span class="line">     <span class="keyword">if</span> (loadData != <span class="literal">null</span> &amp;&amp; helper.hasLoadPath(loadData.fetcher.getDataClass())) &#123;</span><br><span class="line">       started = <span class="literal">true</span>;</span><br><span class="line">       loadData.fetcher.loadData(helper.getPriority(), <span class="built_in">this</span>);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> started;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>下面看下reschedule()方法源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reschedule</span><span class="params">()</span> &#123;</span><br><span class="line">  runReason = RunReason.SWITCH_TO_SOURCE_SERVICE;</span><br><span class="line">  callback.reschedule(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：重复调用 runWrapped() 方法，但此时的 runReason 已经变成了 SWITCH_TO_SOURCE_SERVICE，所以它会执行 runGenerators() 方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runGenerators</span><span class="params">()</span> &#123;</span><br><span class="line">   currentThread = Thread.currentThread();</span><br><span class="line">   startFetchTime = LogTime.getLogTime();</span><br><span class="line">   <span class="type">boolean</span> <span class="variable">isStarted</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">while</span> (!isCancelled</span><br><span class="line">       &amp;&amp; currentGenerator != <span class="literal">null</span></span><br><span class="line">       &amp;&amp; !(isStarted = currentGenerator.startNext())) &#123;</span><br><span class="line">     stage = getNextStage(stage);</span><br><span class="line">     currentGenerator = getNextGenerator();</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (stage == Stage.SOURCE) &#123;</span><br><span class="line">       reschedule();</span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span> ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) &#123;</span><br><span class="line">     notifyFailed();</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>注：此时 currentGenerator 为 SourceGennerator 已经不为null。</p>
+<p>接着看SourceGennerator类中startNext：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startNext</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (dataToCache != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="type">Object</span> <span class="variable">data</span> <span class="operator">=</span> dataToCache;</span><br><span class="line">      dataToCache = <span class="literal">null</span>;</span><br><span class="line">      <span class="comment">// 存储到 DiskLruCache</span></span><br><span class="line">      cacheData(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sourceCacheGenerator != <span class="literal">null</span> &amp;&amp; sourceCacheGenerator.startNext()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sourceCacheGenerator = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    loadData = <span class="literal">null</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">started</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!started &amp;&amp; hasNextModelLoader()) &#123;</span><br><span class="line">      loadData = helper.getLoadData().get(loadDataListIndex++);</span><br><span class="line">      <span class="keyword">if</span> (loadData != <span class="literal">null</span></span><br><span class="line">          &amp;&amp; (helper.getDiskCacheStrategy().isDataCacheable(loadData.fetcher.getDataSource())</span><br><span class="line">              || helper.hasLoadPath(loadData.fetcher.getDataClass()))) &#123;</span><br><span class="line">        started = <span class="literal">true</span>;</span><br><span class="line">        /加载数据</span><br><span class="line">        startNextLoad(loadData);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> started;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>硬盘缓存时通过在 EngineJob 中的 DecodeJob 中完成的，先通过ResourcesCacheGenerator、DataCacheGenerator 看是否能从 DiskLruCache 拿到数据，如果不能，从SourceGenerator去解析数据，并把数据存储到 DiskLruCache 中，后面通过 DataCacheGenerator 的 startNext() 去分发 fetcher 。<br>最后会回调 EngineJob 的 onResourceReady() 方法了，该方法会加载图片，并把数据存到弱引用中</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java-链表（单向、循环、双向）</title>
+    <url>/relaxed/java-%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>什么是链表？链表是一种常见的基础数据结构，是一种线性表，但并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针来做关联，同时链表也分为，单链表、双链表、循环链表。</p>
+<h2 id="单链表（单向链表）"><a href="#单链表（单向链表）" class="headerlink" title="单链表（单向链表）"></a>单链表（单向链表）</h2><h3 id="单链表由两个部分构成"><a href="#单链表由两个部分构成" class="headerlink" title="单链表由两个部分构成"></a>单链表由两个部分构成</h3><ul>
+<li>  DATA域：数据域、用来存储数据元素</li>
+<li>  NEXT域：指针域、用来指向下一个节点</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2022/03/24/q3RB60.jpg" alt="单链表"></p>
+<p>链表与数组类似,也可以进行查找、插入、删除、读取等操作,但是由于链表与数组的特性不同,导致不同操作的复杂度也不同</p>
+<h3 id="查找方式"><a href="#查找方式" class="headerlink" title="查找方式"></a>查找方式</h3><ul>
+<li><p>  从头节点进入,开始比对节点的值,如果不同则通过指针进入下一个节点</p>
+</li>
+<li><p>  重复上面的动作,直到找到相同的值,或者节点的指针指向null</p>
+</li>
+<li><p>  时间复杂度为O(n)</p>
+</li>
+</ul>
+<h3 id="插入或删除方式"><a href="#插入或删除方式" class="headerlink" title="插入或删除方式"></a>插入或删除方式</h3><p>链表与数组最大的不同就在于删除、插入的性能优势,由于链表是非连续的内存,所以不用像数组一样在插入、删除操作的时候需要进行大面积的成员位移,比如在a、b节点之间插入一个新节点c,链表只需要做</p>
+<ul>
+<li>  a断开指向b的指针，将指针指向c</li>
+<li>  c节点将指针指向b，完毕（这才是魅力所在）</li>
+</ul>
+<p>插入或删除只需要调整指针即可。</p>
+<p>时间复杂度为O(1)</p>
+<p>下面看下链表的插入、删除操作</p>
+<p><img src="https://s1.ax1x.com/2022/03/24/q3Rgk4.jpg" alt="单链表插入&amp;删除"></p>
+<h3 id="读取方式"><a href="#读取方式" class="headerlink" title="读取方式"></a>读取方式</h3><p>链表与数组相比读取性能是有劣势的。数组读取操作性能高效是因为它是一块连续内存，读取通过寻址公式就可以快速定位，链表非连续内存必须通过指针节点一一遍历。</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
+<li>  撤销功能,这种操作最多见于各种文本、图形编辑器中,撤销重做在编辑器场景下属于家常便饭,单向链表由于良好的删除特性在这个场景很适用</li>
+<li>  图片队列上传</li>
+<li>  …</li>
+</ul>
+<h2 id="双链表（双向链表）"><a href="#双链表（双向链表）" class="headerlink" title="双链表（双向链表）"></a>双链表（双向链表）</h2><p>我们看到双向链表多了一个新的指针prev指向节点的前一个节点,当然由于多了一个指针,所以双向链表要更占内存</p>
+<p><img src="https://s1.ax1x.com/2022/03/24/q3RfpR.jpg" alt="双链表"></p>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>向双链表中插入一个新节点，需要通过调整两次prev指向和两次next指向来完成。如下图所示，X为新节点，将A1的next指向X，将X的next指向A2，将A2的prev指向X，将X的prev指向A1即可。</p>
+<p><img src="https://s1.ax1x.com/2022/03/24/q3RT0O.jpg" alt="双链表插入"></p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>从双链表中删除一个节点，需要通过调整一次prev指向和一次next指向来完成。如下图所示，删除A2节点，将A1的next指向A3，将A3的 prev指向A1即可。</p>
+<p><img src="https://s1.ax1x.com/2022/03/24/q3RqtH.jpg" alt="双链表删除"></p>
+<h2 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h2><p>环形链表又叫循环链表，本文讲述的是单向环形链表，其与单链表的唯一区别是尾部节点的next不再为空，则是指向了头部节点，这样便形成了一个环。</p>
+<p><img src="https://s1.ax1x.com/2022/03/24/q3RxjP.jpg" alt="循环链表"></p>
+<p>小结：链表与数组的的不同之处在于数组是一块连续的内存,而链表可以不是连续内存,链表的节点与节点之间通过指针来联系的</p>
+<ul>
+<li>  数组静态分配内存，链表动态分配内存</li>
+<li>  数组在内存中连续，链表不连续</li>
+<li>  数组元素在栈区，链表元素在堆区</li>
+<li>  数组利用下标定位，时间复杂度为O(1)，链表定位元素时间复杂度O(n)</li>
+<li>  数组插入或删除元素的时间复杂度O(n)，链表的时间复杂度O(1)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LruCache-原理分析</title>
+    <url>/relaxed/LruCache-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>1.LruCache原理是什么<br> LruCache 采用最近最少使用算法，设定一个缓存大小，当缓存达到这个大小之后，会将最老的数据移除，避免图片占用内存过大导致OOM。</p>
+<p>2.Lrucache源码分析<br> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LruCache</span>&lt;K, V&gt; &#123;</span><br><span class="line">	<span class="comment">// 数据最终存在 LinkedHashMap 中</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> LinkedHashMap&lt;K, V&gt; map;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">LruCache</span><span class="params">(<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (maxSize &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;maxSize &lt;= 0&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">		<span class="comment">// 创建一个LinkedHashMap，accessOrder 传true</span></span><br><span class="line">        <span class="built_in">this</span>.map = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;K, V&gt;(<span class="number">0</span>, <span class="number">0.75f</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure><br>LruCache 构造方法里创建一个LinkedHashMap，accessOrder 参数传true，表示访问时重新排序，accessOrder 参数传false，表示插入时重新排序。（/* LruCache 核心工作原理就在此*/）</p>
+<p>插入顺序是什么意思？<br>按照对象插入的顺序进行排列，可以简单说按照插入的时间先后顺序排列。<br>依次放入1,2,3,4,5   那么按照插入顺序后LruCache中的对象顺序就是1,2,3,4,5</p>
+<p>那么访问顺序是什么意思呢？<br>访问顺序意思就是LruCache中被访问过的子对象会重新排序，那么意味着我们先依次排序进行对象缓存1,2,3,4,5<br>现阶段的对象顺序是1,2,3,4,5<br>如果现在内存使用了2号缓存，那么就表示2号被访问了，重新排序 2,1,3,4,5<br>如果现在内存再命中了4号缓存，那么就表示4号被访问了，重新排序 4,2,1,3,5<br>内存再命中了5号缓存，那么就表示4号被访问了，重新排序 5,4,2,1,3<br>…..<br>…..</p>
+<p>所以每次使用过的缓存都会被重新排到缓存队列的最前面。</p>
+<p>那么意味着，队列越后面的缓存就使用得越少，当缓存队列容量达到阀值后，再往队列中添加新缓存时则可以将队列最后面的使用次数最少的缓存依次移除，插入新缓存，达到Lru算法的效果。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LinkedHashMap-原理分析</title>
+    <url>/relaxed/LinkedHashMap-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>LinkedHashMap 是如何做到LruCache ，下面我们从源码中看一看</p>
+<h2 id="LinkedHashMap构造函数"><a href="#LinkedHashMap构造函数" class="headerlink" title="LinkedHashMap构造函数"></a>LinkedHashMap构造函数</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructs an empty insertion-ordered &lt;tt&gt;LinkedHashMap&lt;/tt&gt; instance</span></span><br><span class="line"><span class="comment">     * with the specified initial capacity and load factor.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  initialCapacity the initial capacity</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  loadFactor      the load factor</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment">     *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LinkedHashMap</span><span class="params">(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(initialCapacity, loadFactor);</span><br><span class="line">        accessOrder = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructs an empty insertion-ordered &lt;tt&gt;LinkedHashMap&lt;/tt&gt; instance</span></span><br><span class="line"><span class="comment">     * with the specified initial capacity and a default load factor (0.75).</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  initialCapacity the initial capacity</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LinkedHashMap</span><span class="params">(<span class="type">int</span> initialCapacity)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(initialCapacity);</span><br><span class="line">        accessOrder = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructs an empty insertion-ordered &lt;tt&gt;LinkedHashMap&lt;/tt&gt; instance</span></span><br><span class="line"><span class="comment">     * with the default initial capacity (16) and load factor (0.75).</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LinkedHashMap</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">        accessOrder = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructs an insertion-ordered &lt;tt&gt;LinkedHashMap&lt;/tt&gt; instance with</span></span><br><span class="line"><span class="comment">     * the same mappings as the specified map.  The &lt;tt&gt;LinkedHashMap&lt;/tt&gt;</span></span><br><span class="line"><span class="comment">     * instance is created with a default load factor (0.75) and an initial</span></span><br><span class="line"><span class="comment">     * capacity sufficient to hold the mappings in the specified map.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  m the map whose mappings are to be placed in this map</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if the specified map is null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LinkedHashMap</span><span class="params">(Map&lt;? extends K, ? extends V&gt; m)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">        accessOrder = <span class="literal">false</span>;</span><br><span class="line">        putMapEntries(m, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructs an empty &lt;tt&gt;LinkedHashMap&lt;/tt&gt; instance with the</span></span><br><span class="line"><span class="comment">     * specified initial capacity, load factor and ordering mode.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  initialCapacity the initial capacity</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  loadFactor      the load factor</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  accessOrder     the ordering mode - &lt;tt&gt;true&lt;/tt&gt; for</span></span><br><span class="line"><span class="comment">     *         access-order, &lt;tt&gt;false&lt;/tt&gt; for insertion-order</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment">     *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LinkedHashMap</span><span class="params">(<span class="type">int</span> initialCapacity,</span></span><br><span class="line"><span class="params">                         <span class="type">float</span> loadFactor,</span></span><br><span class="line"><span class="params">                         <span class="type">boolean</span> accessOrder)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(initialCapacity, loadFactor);</span><br><span class="line">        <span class="built_in">this</span>.accessOrder = accessOrder;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>先分别看下这三个参数：int initialCapacity、float loadFactor, boolean accessOrder</p>
+<p>initialCapacity：表示是初始数组长度</p>
+<p>loadFactor：表示负载因子，表示数组的元素数量/数组长度超过这个比例，数组就要扩容</p>
+<p>accessOrder：false： 基于插入顺序(默认) true： 基于访问顺序</p>
+<p>关于插入顺序，访问顺序可以看我的另一篇文章： <a href="/relaxed/java-%E9%93%BE%E8%A1%A8/" title="java链表(单向，循环、双向)">java链表(单向，循环、双向)</a></p>
+<p>下面看下LinkedHashMap 最常用的get，put 以及afterNodeAccess、afterNodeInsertion方法</p>
+<h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>LinkedHashMap 重写了get方法，实现了LrucaChe</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</span></span><br><span class="line"><span class="comment">More formally, if this map contains a mapping from a key k to a value v such that (key==null ? k==null : key.equals(k)), then this method returns v; otherwise it returns null. (There can be at most one such mapping.)</span></span><br><span class="line"><span class="comment">A return value of null does not necessarily indicate that the map contains no mapping for the key; it&#x27;s also possible that the map explicitly maps the key to null. The containsKey operation may be used to distinguish these two cases*/</span></span><br><span class="line">&lt;P&gt;</span><br><span class="line">返回指定键映射到的值，如果此映射不包含该键的映射，则返回<span class="literal">null</span>。</span><br><span class="line">更正式地说，如果这个映射包含从键k到值v的映射，使得（键==<span class="literal">null</span>？k==<span class="literal">null</span>:key.equals（k）），那么这个方法返回v；否则返回<span class="literal">null</span>。（最多可以有一个这样的映射。）</span><br><span class="line">空映射不一定包含空映射的返回值；映射也可能显式地将密钥映射为<span class="literal">null</span>。containsKey操作可用于区分这两种情况</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"><span class="keyword">public</span> V <span class="title function_">get</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt; e;</span><br><span class="line">        <span class="keyword">if</span> ((e = getNode(hash(key), key)) == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// accessOder为true时，被访问的节点被置于双向链表尾部</span></span><br><span class="line">        <span class="keyword">if</span> (accessOrder)</span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">        <span class="keyword">return</span> e.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.*/</span></span><br><span class="line">&lt;p&gt;返回指定键映射到的值，如果此映射不包含该键的映射，则返回defaultValue。&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> V <span class="title function_">getOrDefault</span><span class="params">(Object key, V defaultValue)</span> &#123;</span><br><span class="line">       Node&lt;K,V&gt; e;</span><br><span class="line">       <span class="keyword">if</span> ((e = getNode(hash(key), key)) == <span class="literal">null</span>)</span><br><span class="line">           <span class="keyword">return</span> defaultValue;</span><br><span class="line">       <span class="keyword">if</span> (accessOrder)</span><br><span class="line">           afterNodeAccess(e);</span><br><span class="line">       <span class="keyword">return</span> e.value;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到在get 方法中调用了afterNodeAccess方法，下面看下这个方法干了什么</p>
+<h2 id="afterNodeAccess"><a href="#afterNodeAccess" class="headerlink" title="afterNodeAccess"></a>afterNodeAccess</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">afterNodeAccess</span><span class="params">(Node&lt;K,V&gt; e)</span> &#123; <span class="comment">// move node to last</span></span><br><span class="line">    <span class="comment">// 用 last 表示插入 e 前的尾节点</span></span><br><span class="line">    <span class="comment">// 插入 e 后 e 是尾节点, 所以也是表示 e 的前一个节点</span></span><br><span class="line">    LinkedHashMap.Entry&lt;K,V&gt; last;</span><br><span class="line">    <span class="comment">//如果是访问序，且当前节点并不是尾节点</span></span><br><span class="line">    <span class="comment">//将该节点置为双向链表的尾部</span></span><br><span class="line">    <span class="keyword">if</span> (accessOrder &amp;&amp; (last = tail) != e) &#123;</span><br><span class="line">        <span class="comment">// p: 当前节点</span></span><br><span class="line">        <span class="comment">// b: 前一个节点</span></span><br><span class="line">        <span class="comment">// a: 后一个节点</span></span><br><span class="line">        LinkedHashMap.Entry&lt;K,V&gt; p =</span><br><span class="line">            (LinkedHashMap.Entry&lt;K,V&gt;)e, b = p.before, a = p.after;</span><br><span class="line">        <span class="comment">// 因为要移动到链尾，所以先至尾指针为空</span></span><br><span class="line">        p.after = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果前面没有元素，则p之前为头结点，直接让a成为头结点</span></span><br><span class="line">        <span class="keyword">if</span> (b == <span class="literal">null</span>)</span><br><span class="line">            head = a;</span><br><span class="line">        <span class="comment">// 否则b的尾指针指向a</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            b.after = a;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (a != <span class="literal">null</span>)</span><br><span class="line">        <span class="comment">//如果a不为空，则a的头指针指向b</span></span><br><span class="line">            a.before = b;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        <span class="comment">//否则 p之前就为尾指针，则另b成为尾指针</span></span><br><span class="line">            last = b;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (last == <span class="literal">null</span>)</span><br><span class="line">            head = p;</span><br><span class="line">        <span class="comment">//如果双向链表中只有p一个节点，则令p即为头结点，也为尾节点</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//否则 将p插入链尾</span></span><br><span class="line">            p.before = last;</span><br><span class="line">            last.after = p;</span><br><span class="line">        &#125;</span><br><span class="line">        tail = p;</span><br><span class="line">        ++modCount;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="put"><a href="#put" class="headerlink" title="put"></a>put</h2><p>LinkedHashMap 并没有重写HashMap的 put 方法，调用的还是HashMap得put方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Associates the specified value with the specified key in this map.</span></span><br><span class="line"><span class="comment">     * If the map previously contained a mapping for the key, the old</span></span><br><span class="line"><span class="comment">     * value is replaced.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key key with which the specified value is to be associated</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> value value to be associated with the specified key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the previous value associated with &lt;tt&gt;key&lt;/tt&gt;, or</span></span><br><span class="line"><span class="comment">     *         &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for &lt;tt&gt;key&lt;/tt&gt;.</span></span><br><span class="line"><span class="comment">     *         (A &lt;tt&gt;null&lt;/tt&gt; return can also indicate that the map</span></span><br><span class="line"><span class="comment">     *         previously associated &lt;tt&gt;null&lt;/tt&gt; with &lt;tt&gt;key&lt;/tt&gt;.)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> V <span class="title function_">put</span><span class="params">(K key, V value)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> putVal(hash(key), key, value, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Implements Map.put and related methods.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> hash hash for key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> value the value to put</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> onlyIfAbsent if true, don&#x27;t change existing value</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> evict if false, the table is in creation mode.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> previous value, or null if none</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">final</span> V <span class="title function_">putVal</span><span class="params">(<span class="type">int</span> hash, K key, V value, <span class="type">boolean</span> onlyIfAbsent,</span></span><br><span class="line"><span class="params">                   <span class="type">boolean</span> evict)</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="type">int</span> n, i;</span><br><span class="line">        <span class="keyword">if</span> ((tab = table) == <span class="literal">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">            n = (tab = resize()).length;</span><br><span class="line">        <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="literal">null</span>)</span><br><span class="line">            tab[i] = newNode(hash, key, value, <span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Node&lt;K,V&gt; e; K k;</span><br><span class="line">            <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">                ((k = p.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                e = p;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="built_in">this</span>, tab, hash, key, value);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">binCount</span> <span class="operator">=</span> <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                    <span class="keyword">if</span> ((e = p.next) == <span class="literal">null</span>) &#123;</span><br><span class="line">                        p.next = newNode(hash, key, value, <span class="literal">null</span>);</span><br><span class="line">                        <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                            treeifyBin(tab, hash);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                        ((k = e.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    p = e;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (e != <span class="literal">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">                <span class="type">V</span> <span class="variable">oldValue</span> <span class="operator">=</span> e.value;</span><br><span class="line">                <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="literal">null</span>)</span><br><span class="line">                    e.value = value;</span><br><span class="line">                afterNodeAccess(e);</span><br><span class="line">                <span class="keyword">return</span> oldValue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ++modCount;</span><br><span class="line">        <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">            resize();</span><br><span class="line">        afterNodeInsertion(evict);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>此外HashMap的putVal()方法，还调用了afterNodeInsertion()方法，</p>
+<h2 id="afterNodeInsertion"><a href="#afterNodeInsertion" class="headerlink" title="afterNodeInsertion"></a>afterNodeInsertion</h2><p>当插入数据时，将双向链表的头结点移除，这几个方法让LinkedHashMap实现了LRU算法。不过removeEldestEntry()默认是返回false的，需要子类继承重写removeEldestEntry()方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">afterNodeInsertion</span><span class="params">(<span class="type">boolean</span> evict)</span> &#123; <span class="comment">// possibly remove eldest</span></span><br><span class="line">        LinkedHashMap.Entry&lt;K,V&gt; first;</span><br><span class="line">        <span class="keyword">if</span> (evict &amp;&amp; (first = head) != <span class="literal">null</span> &amp;&amp; removeEldestEntry(first)) &#123;</span><br><span class="line">            <span class="type">K</span> <span class="variable">key</span> <span class="operator">=</span> first.key;</span><br><span class="line">            removeNode(hash(key), key, <span class="literal">null</span>, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>LinkedHashMap的remove()方法也是调用的HashMap的remove()方法，</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Removes the mapping for the specified key from this map if present.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  key key whose mapping is to be removed from the map</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the previous value associated with &lt;tt&gt;key&lt;/tt&gt;, or</span></span><br><span class="line"><span class="comment">     *         &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for &lt;tt&gt;key&lt;/tt&gt;.</span></span><br><span class="line"><span class="comment">     *         (A &lt;tt&gt;null&lt;/tt&gt; return can also indicate that the map</span></span><br><span class="line"><span class="comment">     *         previously associated &lt;tt&gt;null&lt;/tt&gt; with &lt;tt&gt;key&lt;/tt&gt;.)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> V <span class="title function_">remove</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt; e;</span><br><span class="line">        <span class="keyword">return</span> (e = removeNode(hashLkey), key, <span class="literal">null</span>, <span class="literal">false</span>, <span class="literal">true</span>)) == <span class="literal">null</span> ?</span><br><span class="line">            <span class="literal">null</span> : e.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Implements Map.remove and related methods.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> hash hash for key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> value the value to match if matchValue, else ignored</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> matchValue if true only remove if value is equal</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> movable if false do not move other nodes while removing</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the node, or null if none</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">final</span> Node&lt;K,V&gt; <span class="title function_">removeNode</span><span class="params">(<span class="type">int</span> hash, Object key, Object value,</span></span><br><span class="line"><span class="params">                               <span class="type">boolean</span> matchValue, <span class="type">boolean</span> movable)</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="type">int</span> n, index;</span><br><span class="line">        <span class="keyword">if</span> ((tab = table) != <span class="literal">null</span> &amp;&amp; (n = tab.length) &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">            (p = tab[index = (n - <span class="number">1</span>) &amp; hash]) != <span class="literal">null</span>) &#123;</span><br><span class="line">            Node&lt;K,V&gt; node = <span class="literal">null</span>, e; K k; V v;</span><br><span class="line">            <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">                ((k = p.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                node = p;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ((e = p.next) != <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                    node = ((TreeNode&lt;K,V&gt;)p).getTreeNode(hash, key);</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                            ((k = e.key) == key ||</span><br><span class="line">                             (key != <span class="literal">null</span> &amp;&amp; key.equals(k)))) &#123;</span><br><span class="line">                            node = e;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        p = e;</span><br><span class="line">                    &#125; <span class="keyword">while</span> ((e = e.next) != <span class="literal">null</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node != <span class="literal">null</span> &amp;&amp; (!matchValue || (v = node.value) == value ||</span><br><span class="line">                                 (value != <span class="literal">null</span> &amp;&amp; value.equals(v)))) &#123;</span><br><span class="line">                <span class="keyword">if</span> (node <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                    ((TreeNode&lt;K,V&gt;)node).removeTreeNode(<span class="built_in">this</span>, tab, movable);</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (node == p)</span><br><span class="line">                    tab[index] = node.next;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    p.next = node.next;</span><br><span class="line">                ++modCount;</span><br><span class="line">                --size;</span><br><span class="line">                afterNodeRemoval(node);</span><br><span class="line">                <span class="keyword">return</span> node;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li>  LinkedHashMap 继承 HashMap，拥有 HashMap 的功能</li>
+<li>  LinkedHashMap 维护了两个数据结构，一是 HashMap 的结构，二是用来做迭代的双向链表</li>
+<li>  LinkedHashMap 独特的迭代器设计和一些函数的重写，导致迭代器按双向链表迭代，并且若没有设置 accessOrder，则按插入顺序迭代，否则，按访问顺序迭代</li>
+<li>  通过重写removeEldestEntry可以实现 LruCache 的功能</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java高级特性-反射</title>
+    <url>/relaxed/java-%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p> <strong><a href="https://baike.baidu.com/item/JAVA%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/6015990">JAVA反射机制</a>是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。</strong></p>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>Android中最熟悉的反射，莫过于Json数据的转换，例如网络数据，数据库数据和类之间的相互转化。使用反射机制可以直接创建对象，方便代码管理。</p>
+<h1 id="相关类"><a href="#相关类" class="headerlink" title="相关类"></a>相关类</h1><p><a href="https://developer.android.google.cn/reference/java/lang/Class">. Class</a></p>
+<ul>
+<li>class类下部分常用方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#forName(java.lang.String,%20boolean,%20java.lang.ClassLoader)">forName(String className)</a></td>
+<td align="center">加载参数指定的类，并且初始化它。</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#cast(java.lang.Object)">cast</a></td>
+<td align="center">对象转换成代表类或是接口的对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#cast(java.lang.Object)">getClasses()</a></td>
+<td align="center">返回一个数组，数组中包含该类中所有公共类和接口类的对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getName()">getName()</a></td>
+<td align="center">获取类路径名称</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#newInstance()">newInstance</a></td>
+<td align="center">创建类的实例</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getPackage()">getPackage()</a></td>
+<td align="center">获取类所在包</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getPackage()">getInterfaces()</a></td>
+<td align="center">确定此对象所表示的类或接口实现的接口</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getSuperclass()">getSuperclass()</a></td>
+<td align="center">获得当前类继承的父类的名字</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getClassLoader()">getClassLoader()</a></td>
+<td align="center">获取类加载器</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredClasses()">getDeclaredClasses()</a></td>
+<td align="center">返回一个数组，数组中包含该类中所有类和接口类的对象</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Class类下相关属性方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getField(java.lang.String)">getField(String name)</a></td>
+<td align="center">获取某个公有的属性对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getFields()">getFields()</a></td>
+<td align="center">获取所有公有的属性对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredField(java.lang.String)">getDeclaredField(String name)</a>)</td>
+<td align="center">获取某个私有属性对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredFields()">getDeclaredFields()</a></td>
+<td align="center">获取所有私有属性对象</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Class 类下相关注解方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredAnnotations()">getDeclaredAnnotations()</a></td>
+<td align="center">返回对应类下所有注解对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredAnnotation(java.lang.Class%3CA%3E)">getDeclaredAnnotation(Class<A> annotationClass)</a></td>
+<td align="center">返回对应类中与参数类型匹配的所有注解对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getAnnotation(java.lang.Class%3CA%3E)">getAnnotation(Class<A> annotationClass)</a></td>
+<td align="center">返回对应类中与参数类型匹配的公有注解对象</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getAnnotations()">getAnnotations ()</a></td>
+<td align="center">返回对应类中所有公有注解对象</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Class 类下其它相关方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getMethods()">getMethods()</a></td>
+<td align="center">返回该类所有公有的方法</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getMethod(java.lang.String,%20java.lang.Class%3C?%3E...)">getMethod (String name, Class…&lt;?&gt; parameterTypes)</a></td>
+<td align="center">返回该类某个公有方法</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredMethod(java.lang.String,%20java.lang.Class%3C?%3E...)">getDeclaredMethod(String name, Class…&lt;?&gt; parameterTypes)</a></td>
+<td align="center">返回该类某个方法</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/Class#getDeclaredMethods()">getDeclaredMethods()</a></td>
+<td align="center">返回该类所有方法</td>
+</tr>
+</tbody></table>
+<p><a href="https://developer.android.google.cn/reference/java/lang/reflect/Field">. Method</a></p>
+<ul>
+<li>Method类下部分常用方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/reflect/Method#invoke(java.lang.Object,%20java.lang.Object...)">invoke(Object obj, Object… args)</a></td>
+<td align="center">传递object对象及参数调用该对象对应的方法</td>
+</tr>
+</tbody></table>
+<p><a href="https://developer.android.google.cn/reference/java/lang/reflect/Field">. Field</a></p>
+<ul>
+<li>Field类下部分常用方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/reflect/Field#get(java.lang.Object)">get(Object obj)</a></td>
+<td align="center">获得obj中对应的属性值</td>
+</tr>
+<tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/reflect/Field#set(java.lang.Object,%20java.lang.Object)">set(Object obj, Object value)</a></td>
+<td align="center">设置obj中对应属性值</td>
+</tr>
+</tbody></table>
+<p><a href="https://developer.android.google.cn/reference/java/lang/reflect/Constructor">. Constructor</a></p>
+<ul>
+<li>Constructor类下部分常用方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://developer.android.google.cn/reference/java/lang/reflect/Constructor#newInstance(java.lang.Object...)">newInstance(Object… initargs)</a></td>
+<td align="center">根据传递的参数创建类的对象</td>
+</tr>
+</tbody></table>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><ul>
+<li>反射实体类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GloryOfKings</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String role;</span><br><span class="line">    <span class="keyword">private</span> String skills;</span><br><span class="line">    <span class="keyword">private</span> String explain;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">GloryOfKings</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">GloryOfKings</span><span class="params">(String role, String skills)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.role = role;</span><br><span class="line">        <span class="built_in">this</span>.skills = skills;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getRole</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> role;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setRole</span><span class="params">(String role)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.role = role;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getSkills</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> skills;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSkills</span><span class="params">(String skills)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.skills = skills;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setExplain</span><span class="params">(String explain)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.explain = explain;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getExplain</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> explain;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String <span class="title function_">week</span><span class="params">(<span class="type">int</span> flag)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">switch</span> (flag) &#123;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.monday:</span><br><span class="line">                string = <span class="string">&quot;天气晴朗&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.tuesday:</span><br><span class="line">                string = <span class="string">&quot;多云&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.Wednesday:</span><br><span class="line">                string = <span class="string">&quot;微风&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.Thursday:</span><br><span class="line">                string = <span class="string">&quot;阵风6级&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.Friday:</span><br><span class="line">                string = <span class="string">&quot;中雨&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.Saturday:</span><br><span class="line">                string = <span class="string">&quot;大雨&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> FlagMethod.Sunday:</span><br><span class="line">                string = <span class="string">&quot;晴朗&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                string = <span class="string">&quot;-.-&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> string;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>逻辑封装类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Reflect</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 反射-创建对象（三种方式：.class、new MyClass().getClass，Class.forName(&quot;类的全路径&quot;)）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">newInstance</span><span class="params">(<span class="type">int</span> flag)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">outMessage</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">switch</span> (flag) &#123;</span><br><span class="line">                <span class="keyword">case</span> FlagSource.newInstanceOne:</span><br><span class="line">                    Class&lt;GloryOfKings&gt; cls = GloryOfKings.class;</span><br><span class="line">                    <span class="type">GloryOfKings</span> <span class="variable">gloryOfKings</span> <span class="operator">=</span> cls.newInstance();</span><br><span class="line">                    gloryOfKings.setExplain(<span class="string">&quot;创建对象方式- GloryOfKings.class&quot;</span>);</span><br><span class="line">                    gloryOfKings.setRole(<span class="string">&quot;李元芳&quot;</span>);</span><br><span class="line">                    gloryOfKings.setSkills(<span class="string">&quot;利刃风暴&quot;</span>);</span><br><span class="line">                    outMessage = gloryOfKings.toString();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> FlagSource.newInstanceTwo:</span><br><span class="line">                    Class&lt;? <span class="keyword">extends</span> <span class="title class_">GloryOfKings</span>&gt; cls1 = <span class="keyword">new</span> <span class="title class_">GloryOfKings</span>().getClass();</span><br><span class="line">                    <span class="type">GloryOfKings</span> <span class="variable">gloryOfKings1</span> <span class="operator">=</span> cls1.newInstance();</span><br><span class="line">                    gloryOfKings1.setExplain(<span class="string">&quot;创建对象方式- new GloryOfKings().getClass()&quot;</span>);</span><br><span class="line">                    gloryOfKings1.setRole(<span class="string">&quot;后羿&quot;</span>);</span><br><span class="line">                    gloryOfKings1.setSkills(<span class="string">&quot;灼日之矢”&quot;</span>);</span><br><span class="line">                    outMessage = gloryOfKings1.toString();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> FlagSource.newInstanceThree:</span><br><span class="line">                    Class&lt;?&gt; cls2 = Class.forName(<span class="string">&quot;com.linked.business.reflect.GloryOfKings&quot;</span>);</span><br><span class="line">                    <span class="type">GloryOfKings</span> <span class="variable">gloryOfKings2</span> <span class="operator">=</span> (GloryOfKings) cls2.newInstance();</span><br><span class="line">                    gloryOfKings2.setExplain(<span class="string">&quot;创建对象方式- Class.forName()&quot;</span>);</span><br><span class="line">                    gloryOfKings2.setRole(<span class="string">&quot;诸葛亮&quot;</span>);</span><br><span class="line">                    gloryOfKings2.setSkills(<span class="string">&quot;时空穿梭”&quot;</span>);</span><br><span class="line">                    outMessage = gloryOfKings2.toString();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(outMessage);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 反射-私有构造方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">construction</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; cls = Class.forName(<span class="string">&quot;com.linked.business.reflect.GloryOfKings&quot;</span>);</span><br><span class="line">            Constructor&lt;?&gt; constructor = cls.getDeclaredConstructor(String.class, String.class);</span><br><span class="line">            constructor.setAccessible(<span class="literal">true</span>);</span><br><span class="line">            <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> constructor.newInstance(<span class="string">&quot; 反射-设置私有构造方法：名称&quot;</span>, <span class="string">&quot; 反射-获取私有构造方法：福利&quot;</span>);</span><br><span class="line">            <span class="type">GloryOfKings</span> <span class="variable">go</span> <span class="operator">=</span> (GloryOfKings) obj;</span><br><span class="line">            System.out.println(<span class="string">&quot;反射-获取私有构造方法&quot;</span> + go);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 反射-私有属性</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">reflectDeclaredAttribute</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; cls = Class.forName(<span class="string">&quot;com.linked.business.reflect.GloryOfKings&quot;</span>);</span><br><span class="line">            <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> cls.newInstance();</span><br><span class="line">            <span class="type">Field</span> <span class="variable">field</span> <span class="operator">=</span> cls.getDeclaredField(<span class="string">&quot;TAG&quot;</span>);</span><br><span class="line">            field.setAccessible(<span class="literal">true</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (String) field.get(obj);</span><br><span class="line">            System.out.println(<span class="string">&quot;反射-获取私有属性&quot;</span> + str);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 反射-私有方法</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;将此对象的 accessible 标志设置为指示的布尔值。值为 true 则指示反射的对象在使用时应该取消 Java 语言访问检查。值为 false 则指示反射的对象应该实施 Java 语言访问检查;</span></span><br><span class="line"><span class="comment">     * 实际上setAccessible是启用和禁用访问安全检查的开关,并不是为true就能访问为false就不能访问 ；</span></span><br><span class="line"><span class="comment">     * 由于JDK的安全检查耗时较多.所以通过setAccessible(true)的方式关闭安全检查就可以达到提升反射速度的目的</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">privateMethod</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; cls = Class.forName(<span class="string">&quot;com.linked.business.reflect.GloryOfKings&quot;</span>);</span><br><span class="line">            <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> cls.getDeclaredMethod(<span class="string">&quot;week&quot;</span>, <span class="type">int</span>.class);</span><br><span class="line">            method.setAccessible(<span class="literal">true</span>);</span><br><span class="line">            <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> cls.newInstance();</span><br><span class="line">            <span class="comment">//invoke：传递object对象及参数调用该对象对应的方法</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (String) method.invoke(obj, FlagMethod.monday);</span><br><span class="line">            System.out.println(str);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>测试类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ReflectTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Reflect.newInstance(FlagSource.newInstanceTwo);</span><br><span class="line">            Reflect.attribute();</span><br><span class="line">            Reflect.construction();</span><br><span class="line">            Reflect.privateMethod();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handler-内存泄漏解决方案</title>
+    <url>/relaxed/Handler-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>Android开发中，内存泄漏是经常发生的，今天来详细聊一聊Handler使用过程中产生内存泄漏的场景以及对应的解决方案。</li>
+</ul>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://s1.ax1x.com/2022/05/04/OEUUXD.png"><img src="https://s1.ax1x.com/2022/05/04/OEUUXD.png" alt="OEUUXD.png"></a></p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ul>
+<li>Android中使用Handler导致内存泄漏原因分析。当一个对象已经不再被使用时，本该被回收但却因为有另外一个正在使用的对象持有它的引用从而导致它不能被回收，导致了内存泄漏。</li>
+</ul>
+<h1 id="原因详解"><a href="#原因详解" class="headerlink" title="原因详解"></a>原因详解</h1><ul>
+<li>在Handler消息队列还有未处理的消息 / 正在处理消息时，消息队列中的Message持有Handler实例的引用，由于Handler = 非静态内部类 &amp; 匿名内部类又默认持有外部类的引用。如图</li>
+</ul>
+<p><a href="https://s1.ax1x.com/2022/05/04/OE88YT.png"><img src="https://s1.ax1x.com/2022/05/04/OE88YT.png" alt="示例1.png"></a></p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
+<li><p>静态内部类+弱引用</p>
+</li>
+<li><p>静态内部类 不默认持有外部类的引用，从而使得 “未被处理&amp;正处理的消息 -&gt; Handler实例 -&gt; 外部类”的引用关系不复存在。</p>
+</li>
+<li><p>使用WeakReference弱引用持有Activity实例的原因：弱引用的对象拥有短暂的生命周期。在垃圾回收器线程扫描时，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存</p>
+</li>
+<li><p>工具类封装</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.linked.business.handler;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Handler;</span><br><span class="line"><span class="keyword">import</span> android.os.Looper;</span><br><span class="line"><span class="keyword">import</span> android.os.Message;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.ref.WeakReference;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrestLeakHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MessageHandler&gt; reference;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrestLeakHandler</span><span class="params">(MessageHandler messageHandler)</span> &#123;</span><br><span class="line">        reference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(messageHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrestLeakHandler</span><span class="params">(MessageHandler messageHandler, Looper looper)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(looper);</span><br><span class="line">        reference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(messageHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 复写handlerMessage 做更新UI的操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="type">MessageHandler</span> <span class="variable">messageHandler</span> <span class="operator">=</span> reference.get();</span><br><span class="line">        <span class="keyword">if</span> (messageHandler != <span class="literal">null</span>) &#123;</span><br><span class="line">            messageHandler.handleMessage(msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MessageHandler</span> &#123;</span><br><span class="line">        <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>具体 java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HandlerLeakActivity</span> <span class="keyword">extends</span> <span class="title class_">BaseActivity</span>&lt;ActivtyHandlerLeakBinding, BasePresenter&gt; <span class="keyword">implements</span> <span class="title class_">ArrestLeakHandler</span>.MessageHandler &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(<span class="meta">@Nullable</span> Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        initViews();</span><br><span class="line">        initHandler();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">initViews</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//发送消息A</span></span><br><span class="line">        vBinding.tvA.setOnClickListener(view -&gt; &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">            msg.obj = <span class="string">&quot;我是消息A&quot;</span>;</span><br><span class="line">            msg.what = <span class="number">1</span>;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//发送消息B</span></span><br><span class="line">        vBinding.tvB.setOnClickListener(view -&gt; &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">            msg.obj = <span class="string">&quot;我是消息B&quot;</span>;</span><br><span class="line">            msg.what = <span class="number">2</span>;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> BasePresenter <span class="title function_">initPresenter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onBackPressed</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onBackPressed();</span><br><span class="line">        finish();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> ArrestLeakHandler mHandler, mMainHandler;</span><br><span class="line">    HandlerThread mHandlerThread;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initHandler</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//①创建子线程</span></span><br><span class="line">        mHandlerThread = <span class="keyword">new</span> <span class="title class_">HandlerThread</span>(<span class="string">&quot;handlerThread&quot;</span>);</span><br><span class="line">        <span class="comment">//②开启线程</span></span><br><span class="line">        mHandlerThread.start();</span><br><span class="line">        <span class="comment">//③建立与主线程关联Handler</span></span><br><span class="line">        mMainHandler = <span class="keyword">new</span> <span class="title class_">ArrestLeakHandler</span>(<span class="built_in">this</span>);</span><br><span class="line">        mHandler = <span class="keyword">new</span> <span class="title class_">ArrestLeakHandler</span>(<span class="built_in">this</span>, mHandlerThread.getLooper());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> (msg.what) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (String) msg.obj;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1500</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                LogUtils.v(<span class="string">&quot;Handler Message---&gt;&quot;</span> + str);</span><br><span class="line">                mMainHandler.post(() -&gt; vBinding.tvShowMessage.setText(str));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        mHandler = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>注:当外部类（Activity为例）结束生命周期时（onDestroy），应当清除Handler消息队列里的所有消息（调用removeCallbacksAndMessages(null)）方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        mHandler = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1></li>
+<li><p>当Handler消息队列中存在未处理或正在处理的消息时，并且存在引用关系:未被处理&amp;正处理的消息-&gt;Handler实例-&gt;外部类<br>当Handler的生命周期&gt;外部类的生命周期时（当外部类需销毁时(Handler消息队列中还有未处理或正在处理消息)),将使得外部类无法被垃圾回收器(GC)回收，既造成内存泄露。</p>
+</li>
+</ul>
+<h3 id="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"><a href="#如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻" class="headerlink" title="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"></a><font color=#9dc2af>如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻</font></h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Handler</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handler-消息通讯机制详解</title>
+    <url>/relaxed/Handler-%E6%B6%88%E6%81%AF%E9%80%9A%E8%AE%AF%E6%9C%BA%E5%88%B6%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>Android开发中，Handler媒介机制十分常用，今天我们来详细聊一聊Handler通讯机制是如何实现的。</li>
+</ul>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://s1.ax1x.com/2022/05/05/Omb4mt.png"><img src="https://s1.ax1x.com/2022/05/05/Omb4mt.png" alt="Omb4mt.png"></a></p>
+<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>在多线程的应用场景中，将工作线程中需更新UI的操作信息 传递到 UI主线程，从而实现工作线程对UI线程的更新，最终实现异步消息的处理。</p>
+<h1 id="概念描述"><a href="#概念描述" class="headerlink" title="概念描述"></a>概念描述</h1><p>Handler、Message、MessageQueue、Looper相关概念如下图。</p>
+<!--MarkDown 不支持单元格合并，即使用Html -->
+<table>
+<!--this is title-->
+    <tr align = "center" bgcolor = "#91bdb6">
+        <td>概念</td>
+        <td>定义</td>
+        <td>作用</td>
+        <!-- <td>备注</td> -->
+    </tr>
+    <!--this is Main-->
+    <tr align="center">
+        <td>主线程<br/><font color = "#91bdb6">( UI线程、Main Thread )</font></td>
+        <td>系统首次启动，会创建主线程</td>
+        <td>处理UI相关操作<br/><font color = "#91bdb6">( 如：更新UI )</font></td>
+        <!-- <td rowspan="2">主线程与子线程<br/>通讯媒介Handler</td> -->
+    </tr>
+      <!--this is Thread-->
+    <tr align="center">
+        <td>子线程<br/><font color = "#91bdb6">（ 工作线程 ）</font></td>
+        <td>人为开启的线程</td>
+        <td>执行耗时任务<br/><font color = "#91bdb6">( 如 网络请求、数据加载等 )</font></td>
+    </tr>
+      <!--this is Message-->
+    <tr align="center">
+      <td>消息<br/><font color = "#91bdb6">（ Message ）</font></td>
+      <td>线程间通讯数据单元<br/><font color = "#91bdb6">（handler接收&处理消息对象）</font></td>
+      <td>存储业务操作信息<br/><font color = "#91bdb6">（ Message ）</font></td>
+    </tr>
+      <!--this is Message Queue-->
+    <tr align="center">
+        <td>消息队列<br/><font color = "#91bdb6">（ Message Queue ）</font></td>
+        <td>数据结构<br/><font color = "#91bdb6">（ 以时间顺序排列 ）</font></td>
+        <td>存储Handler发送的消息<br/><font color = "#91bdb6">（ Message ）</font></td>
+    </tr>
+      <!--this is Handler-->
+    <tr align="center">
+        <td>处理着<br/><font color = "#91bdb6">（ Handler ）</font></td>
+        <td>主线程与子线程通讯的媒介<br/>线程消息的处理者</td>
+        <td>将消息( Message ）添加到<br/>消息队列( Message Queue )中<br/> 处理循环器（ Looper ）分派的消息</td>
+    </tr>
+    <tr align="center">
+        <td>循环器<br/><font color = "#91bdb6">（ Looper ）</font></td>
+        <td>消息队列( Message Queue )<br/>与处理者 （ Handler ）<br/>通讯媒介</td>
+        <td>消息循环 即：<br/><font color = "#91bdb6"> 消息获取：循环取出消息队列<br/>（ Message Queue ）中的<br/>消息（ Message ）<br/> 消息分发：将取出来的消息<br/>（ Message ）发送给对应的<br/>处理者（ Handler ）</font></td>
+    </tr>
+</table>
+
+<h1 id="机制说明"><a href="#机制说明" class="headerlink" title="机制说明"></a>机制说明</h1><p>Handler消息传递机制:多个线程并发更新UI时，保证线程安全<br><a href="https://s1.ax1x.com/2022/05/06/OmxK4P.png"><img src="https://s1.ax1x.com/2022/05/06/OmxK4P.png" alt="示例图.png"></a><br>注：<a href="https://juejin.cn/post/6844903890224152584">图解Java线程安全</a></p>
+<h1 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h1><h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><ul>
+<li><p>异步通信( 主线程中创建 )</p>
+<blockquote>
+<blockquote>
+<p>处理者（ Handler ）对象</p>
+<blockquote>
+<p>注：Handler会自定绑定主线程中的Looper&amp;MessageQueue</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>处理器（ Looper ）对象</p>
+<blockquote>
+<p>注：Looper &amp; MessageQueue都是在主线程中</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>消息队列（ Message Queue ）对象</p>
+<blockquote>
+<p>注： 创建MessageQueue后，Looper会自动进入循环状态，有消息则循环取，没有，则阻塞状态，发现消息后会被唤醒继续循环读取。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><p>消息入队列</p>
+<blockquote>
+<p>工作线程中通过Handler的sendMessage()方法发送消息（ Message ）到消息队列（ MessageQueue ）中，这是消息完成入队列操作。</p>
+<blockquote>
+<p>注：此消息内容就是工作线程对UI主线程的操作</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>消息循环</p>
+<blockquote>
+<p>第一步：消息出队列：Looper循环取出消息队列（ MessageQueue ）中的消息（ Message ）交给第二步消息分发。<br>第二步：消息分发：Looper将取出来的消息（ Message ）发送给创建消息的处理者（ Handler ）</p>
+<blockquote>
+<p>注：循环器( Looper )循环取消息时，若发现消息队列（ MessageQueue ）中为空，则会线程阻塞，待又消息时再次被唤醒继续循环读取。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>消息处理</p>
+<blockquote>
+<p>处理者( Handler ) 在接收处理器（ Looper ）发送过来的消息（ Message ）会进行UI操作。</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://s1.ax1x.com/2022/05/06/OuFqzR.png"><img src="https://s1.ax1x.com/2022/05/06/OuFqzR.png" alt="示意图.png"></a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Android开发中，UI操作在主线程中进行，但是主线程又不能进行耗时操作，否则会阻塞线程，产生我们常见的ANR异常，所以常常把耗时操作放到其它子线程进行。如果在子线程中需要更新UI，一般是通过 Handler发送消息( message ），主线程接收消息并且进行相应的处理。以上就是Handler通讯消息传递机制的详解。</p>
+<h3 id="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"><a href="#如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻" class="headerlink" title="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"></a><font color=#9dc2af>如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻</font></h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Handler</tag>
+      </tags>
+  </entry>
+</search>
