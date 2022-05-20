@@ -1,6 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Markdown 语法</title>
+    <url>/relaxed/markdown-grammar/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> &ensp; Markdown语法的基本使用</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://s3.bmp.ovh/imgs/2022/03/5e25d102468382c1.jpg"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>MarkDown基础语法使用参考</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><ul>
+<li><p>语法<br>一级标题用一个#，二级标题## ….最多展示六级标题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">####### 六级标题</span><br></pre></td></tr></table></figure></li>
+<li><p>效果</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></li>
+</ul>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul>
+<li><p>加粗</p>
+<ul>
+<li>语法<br> 要加粗的文本前后用两个 ** 符号包裹起来</li>
+<li>效果<br> <strong>我是加粗后的字体</strong></li>
+</ul>
+</li>
+<li><p>斜体</p>
+<ul>
+<li>语法<br> 要倾斜的文本前后用一个 * 符号包裹起来</li>
+<li>效果</li>
+<li>我是倾斜后的字体*</li>
+</ul>
+</li>
+<li><p>斜体&amp;加粗<br>*语法<br>  要倾斜并且加粗的文本前后用三个 ***  符号包裹起来<br>*效果</p>
+</li>
+<li><p><strong>我是倾斜并且加粗后的字体</strong>*</p>
+</li>
+<li><p>删除线</p>
+<ul>
+<li>语法<br> 要加删除线的文本左右分别用两个 ~~ 符号包起来</li>
+<li>效果<br><del>我是添加删除线的字体</del></li>
+</ul>
+</li>
+</ul>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><ul>
+<li><p>空格</p>
+<ul>
+<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">插入一个空格 &amp;nbsp;   </span><br><span class="line">插入两个空格 &amp;ensp;  </span><br><span class="line">插入四个空格 &amp;emsp;   </span><br></pre></td></tr></table></figure>
+或者使用全角空格。即：在全角输入状态下直接使用空格键就ok了</li>
+<li>效果<br>&nbsp;   插入一个空格文本<br>&ensp;   插入两个空格文本<br>&emsp;   插入四个空格文本<br>　　全角按了两个空格文本😎</li>
+</ul>
+</li>
+<li><p>换行</p>
+<ul>
+<li>语法<br>使用 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</li>
+<li>效果<br>我在这里需要换行啦<br>精彩内容在仍在继续…</li>
+</ul>
+</li>
+</ul>
+<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><ul>
+<li><p>单个段落块引用</p>
+<ul>
+<li>语法<br>要创建单个段落块引用，请在段落前添加一个 &gt; 符号。</li>
+<li>效果<blockquote>
+<p>我是单个段落引用</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>多个段落块引用</p>
+<ul>
+<li>语法<br> 要创建单个段落块引用，请在段落前与段落之间添加 &gt; 符号。</li>
+<li>效果<blockquote>
+<p>我是段落一</p>
+<p>我是段落二</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>嵌套块引用</p>
+</li>
+<li><p>语法<br> 在要嵌套的段落前添加一个 &gt;&gt; 符号。</p>
+</li>
+<li><p>效果</p>
+<blockquote>
+<p>我是段落一</p>
+<blockquote>
+<p>我是段落二并且需要嵌套引用</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>无限嵌套引用…</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
+<li><p>有序列表</p>
+<ul>
+<li><p>语法<br> 列表项前添加数字并紧跟一个英文句点 1. 2. 3. 等等 …</p>
+</li>
+<li><p>效果</p>
+</li>
+</ul>
+<p>1.有序列表<br>2.有序列表<br>3.有序列表<br>…</p>
+</li>
+<li><p>无序列表<br>为了兼容，请不要在同一个列表中混用不同的分隔符，最好选定一种分隔符使用</p>
+<ul>
+<li>语法<br>无序列表用 - + * 任意一种都可以</li>
+<li>效果<ul>
+<li>无序列表</li>
+<li>无序列表</li>
+<li>无序列表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><p>代码块高亮</p>
+<ul>
+<li>语法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">（```）java</span><br><span class="line">  这个写代码块</span><br><span class="line">  注意：（```）这个写法是防止符号被转义，正常写去掉（）只写 ``` 就好了</span><br><span class="line">（```）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>单行代码块</p>
+<ul>
+<li>语法<br>单行代码块使用 `  `包裹</li>
+<li>效果<br> <code> System.out.println(&quot;Hello World!&quot;); </code></li>
+</ul>
+</li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li>语法<br>[图片上传中…(image-9df155-1642153968831)]<br>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</li>
+<li>效果<br><img src="https://s3.bmp.ovh/imgs/2022/03/3c7eea0313d87901.jpeg"></li>
+</ul>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><ul>
+<li>语法<br>为了兼容性，请在分隔线的前后均添加空白行<br>三个以上 — 或 ***</li>
+<li>效果</li>
+</ul>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><ul>
+<li>语法<br>要创建链接，请将链接文本括在方括号（例如 [Duck Duck Go]）中，后面紧跟着括在圆括号中的 URL（例如 (<a href="https://duckduckgo.com/">https://duckduckgo.com</a>) ）。</li>
+<li>效果<br>My favorite search engine is <a href="https://duckduckgo.com/">Duck Duck Go</a>.</li>
+</ul>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>因简书不支持流程图，可以参考：<br><a href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
+<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| --- | --- |</span><br><span class="line">| 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 |</span><br></pre></td></tr></table></figure></li>
+<li>效果<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody></table>
+</li>
+<li>对齐方式<ul>
+<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br></pre></td></tr></table></figure></li>
+<li>效果<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">内容</td>
+<td align="right">内容</td>
+<td align="center">内容</td>
+</tr>
+<tr>
+<td align="left">内容</td>
+<td align="right">内容</td>
+<td align="center">内容</td>
+</tr>
+</tbody></table>
+<h2 id="网址、电子邮件地址"><a href="#网址、电子邮件地址" class="headerlink" title="网址、电子邮件地址"></a>网址、电子邮件地址</h2></li>
+</ul>
+</li>
+<li>语法<br> 将 URL 或电子邮件地址括在&lt;&gt;里</li>
+<li>效果<br><a href="https://www.google.com.hk/">https://www.google.com.hk/</a><br><a href="mailto:&#116;&#101;&#115;&#x74;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#116;&#101;&#115;&#x74;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></li>
+</ul>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。<br>字符|名称<br>–|–<br>| \ | 反斜杠<br>| * | 星号（asterisk） |<br>| _ | 下划线（underscore） |<br>| { } | 花括号（curly braces） |<br>| [ ] | 方括号（brackets） |<br>| &lt; &gt; | angle brackets |<br>| ( ) | 圆括号或括号（parentheses） |<br>| # | 井号（pound sign） |<br>| + | 加号（plus sign） |<br>| - | 减号（minus sign） (也叫连字符 hyphen) |<br>| . | 句点（dot） |<br>| ! | 感叹号（exclamation mark） |</p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git代码回滚</title>
     <url>/relaxed/git-back/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&ensp;在我们开发过程中，因各种原因，避免不了将业务代码回滚至指定版本，或者具体一些到某次commit。<br>下面我们将具体步骤及具体实现做分析。</p>
@@ -319,444 +526,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown 语法</title>
-    <url>/relaxed/markdown-grammar/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> &ensp; Markdown语法的基本使用</p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://s3.bmp.ovh/imgs/2022/03/5e25d102468382c1.jpg"></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>MarkDown基础语法使用参考</p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><ul>
-<li><p>语法<br>一级标题用一个#，二级标题## ….最多展示六级标题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">####### 六级标题</span><br></pre></td></tr></table></figure></li>
-<li><p>效果</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></li>
-</ul>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul>
-<li><p>加粗</p>
-<ul>
-<li>语法<br> 要加粗的文本前后用两个 ** 符号包裹起来</li>
-<li>效果<br> <strong>我是加粗后的字体</strong></li>
-</ul>
-</li>
-<li><p>斜体</p>
-<ul>
-<li>语法<br> 要倾斜的文本前后用一个 * 符号包裹起来</li>
-<li>效果</li>
-<li>我是倾斜后的字体*</li>
-</ul>
-</li>
-<li><p>斜体&amp;加粗<br>*语法<br>  要倾斜并且加粗的文本前后用三个 ***  符号包裹起来<br>*效果</p>
-</li>
-<li><p><strong>我是倾斜并且加粗后的字体</strong>*</p>
-</li>
-<li><p>删除线</p>
-<ul>
-<li>语法<br> 要加删除线的文本左右分别用两个 ~~ 符号包起来</li>
-<li>效果<br><del>我是添加删除线的字体</del></li>
-</ul>
-</li>
-</ul>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><ul>
-<li><p>空格</p>
-<ul>
-<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">插入一个空格 &amp;nbsp;   </span><br><span class="line">插入两个空格 &amp;ensp;  </span><br><span class="line">插入四个空格 &amp;emsp;   </span><br></pre></td></tr></table></figure>
-或者使用全角空格。即：在全角输入状态下直接使用空格键就ok了</li>
-<li>效果<br>&nbsp;   插入一个空格文本<br>&ensp;   插入两个空格文本<br>&emsp;   插入四个空格文本<br>　　全角按了两个空格文本😎</li>
-</ul>
-</li>
-<li><p>换行</p>
-<ul>
-<li>语法<br>使用 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</li>
-<li>效果<br>我在这里需要换行啦<br>精彩内容在仍在继续…</li>
-</ul>
-</li>
-</ul>
-<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><ul>
-<li><p>单个段落块引用</p>
-<ul>
-<li>语法<br>要创建单个段落块引用，请在段落前添加一个 &gt; 符号。</li>
-<li>效果<blockquote>
-<p>我是单个段落引用</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>多个段落块引用</p>
-<ul>
-<li>语法<br> 要创建单个段落块引用，请在段落前与段落之间添加 &gt; 符号。</li>
-<li>效果<blockquote>
-<p>我是段落一</p>
-<p>我是段落二</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>嵌套块引用</p>
-</li>
-<li><p>语法<br> 在要嵌套的段落前添加一个 &gt;&gt; 符号。</p>
-</li>
-<li><p>效果</p>
-<blockquote>
-<p>我是段落一</p>
-<blockquote>
-<p>我是段落二并且需要嵌套引用</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>无限嵌套引用…</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
-<li><p>有序列表</p>
-<ul>
-<li><p>语法<br> 列表项前添加数字并紧跟一个英文句点 1. 2. 3. 等等 …</p>
-</li>
-<li><p>效果</p>
-</li>
-</ul>
-<p>1.有序列表<br>2.有序列表<br>3.有序列表<br>…</p>
-</li>
-<li><p>无序列表<br>为了兼容，请不要在同一个列表中混用不同的分隔符，最好选定一种分隔符使用</p>
-<ul>
-<li>语法<br>无序列表用 - + * 任意一种都可以</li>
-<li>效果<ul>
-<li>无序列表</li>
-<li>无序列表</li>
-<li>无序列表</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li><p>代码块高亮</p>
-<ul>
-<li>语法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">（```）java</span><br><span class="line">  这个写代码块</span><br><span class="line">  注意：（```）这个写法是防止符号被转义，正常写去掉（）只写 ``` 就好了</span><br><span class="line">（```）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>效果<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>单行代码块</p>
-<ul>
-<li>语法<br>单行代码块使用 `  `包裹</li>
-<li>效果<br> <code> System.out.println(&quot;Hello World!&quot;); </code></li>
-</ul>
-</li>
-</ul>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
-<li>语法<br>[图片上传中…(image-9df155-1642153968831)]<br>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</li>
-<li>效果<br><img src="https://s3.bmp.ovh/imgs/2022/03/3c7eea0313d87901.jpeg"></li>
-</ul>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><ul>
-<li>语法<br>为了兼容性，请在分隔线的前后均添加空白行<br>三个以上 — 或 ***</li>
-<li>效果</li>
-</ul>
-<hr>
-<hr>
-<hr>
-<hr>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><ul>
-<li>语法<br>要创建链接，请将链接文本括在方括号（例如 [Duck Duck Go]）中，后面紧跟着括在圆括号中的 URL（例如 (<a href="https://duckduckgo.com/">https://duckduckgo.com</a>) ）。</li>
-<li>效果<br>My favorite search engine is <a href="https://duckduckgo.com/">Duck Duck Go</a>.</li>
-</ul>
-<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>因简书不支持流程图，可以参考：<br><a href="https://www.runoob.com/markdown/md-advance.html">https://www.runoob.com/markdown/md-advance.html</a></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
-<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头|</span><br><span class="line">| --- | --- |</span><br><span class="line">| 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 |</span><br></pre></td></tr></table></figure></li>
-<li>效果<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内容</td>
-<td>内容</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>内容</td>
-</tr>
-</tbody></table>
-</li>
-<li>对齐方式<ul>
-<li>语法<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br></pre></td></tr></table></figure></li>
-<li>效果<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">内容</td>
-<td align="right">内容</td>
-<td align="center">内容</td>
-</tr>
-<tr>
-<td align="left">内容</td>
-<td align="right">内容</td>
-<td align="center">内容</td>
-</tr>
-</tbody></table>
-<h2 id="网址、电子邮件地址"><a href="#网址、电子邮件地址" class="headerlink" title="网址、电子邮件地址"></a>网址、电子邮件地址</h2></li>
-</ul>
-</li>
-<li>语法<br> 将 URL 或电子邮件地址括在&lt;&gt;里</li>
-<li>效果<br><a href="https://www.google.com.hk/">https://www.google.com.hk/</a><br><a href="mailto:&#x74;&#x65;&#x73;&#116;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x74;&#x65;&#x73;&#116;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></li>
-</ul>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。<br>字符|名称<br>–|–<br>| \ | 反斜杠<br>| * | 星号（asterisk） |<br>| _ | 下划线（underscore） |<br>| { } | 花括号（curly braces） |<br>| [ ] | 方括号（brackets） |<br>| &lt; &gt; | angle brackets |<br>| ( ) | 圆括号或括号（parentheses） |<br>| # | 井号（pound sign） |<br>| + | 加号（plus sign） |<br>| - | 减号（minus sign） (也叫连字符 hyphen) |<br>| . | 句点（dot） |<br>| ! | 感叹号（exclamation mark） |</p>
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Handler-内存泄漏解决方案</title>
-    <url>/relaxed/Handler-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>Android开发中，内存泄漏是经常发生的，今天来详细聊一聊Handler使用过程中产生内存泄漏的场景以及对应的解决方案。</li>
-</ul>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://s1.ax1x.com/2022/05/04/OEUUXD.png"><img src="https://s1.ax1x.com/2022/05/04/OEUUXD.png" alt="OEUUXD.png"></a></p>
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ul>
-<li>Android中使用Handler导致内存泄漏原因分析。当一个对象已经不再被使用时，本该被回收但却因为有另外一个正在使用的对象持有它的引用从而导致它不能被回收，导致了内存泄漏。</li>
-</ul>
-<h1 id="原因详解"><a href="#原因详解" class="headerlink" title="原因详解"></a>原因详解</h1><ul>
-<li>在Handler消息队列还有未处理的消息 / 正在处理消息时，消息队列中的Message持有Handler实例的引用，由于Handler = 非静态内部类 &amp; 匿名内部类又默认持有外部类的引用。如图</li>
-</ul>
-<p><a href="https://s1.ax1x.com/2022/05/04/OE88YT.png"><img src="https://s1.ax1x.com/2022/05/04/OE88YT.png" alt="示例1.png"></a></p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
-<li><p>静态内部类+弱引用</p>
-</li>
-<li><p>静态内部类 不默认持有外部类的引用，从而使得 “未被处理&amp;正处理的消息 -&gt; Handler实例 -&gt; 外部类”的引用关系不复存在。</p>
-</li>
-<li><p>使用WeakReference弱引用持有Activity实例的原因：弱引用的对象拥有短暂的生命周期。在垃圾回收器线程扫描时，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存</p>
-</li>
-<li><p>工具类封装</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.linked.business.handler;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Handler;</span><br><span class="line"><span class="keyword">import</span> android.os.Looper;</span><br><span class="line"><span class="keyword">import</span> android.os.Message;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.ref.WeakReference;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrestLeakHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MessageHandler&gt; reference;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrestLeakHandler</span><span class="params">(MessageHandler messageHandler)</span> &#123;</span><br><span class="line">        reference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(messageHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrestLeakHandler</span><span class="params">(MessageHandler messageHandler, Looper looper)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(looper);</span><br><span class="line">        reference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(messageHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 复写handlerMessage 做更新UI的操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="type">MessageHandler</span> <span class="variable">messageHandler</span> <span class="operator">=</span> reference.get();</span><br><span class="line">        <span class="keyword">if</span> (messageHandler != <span class="literal">null</span>) &#123;</span><br><span class="line">            messageHandler.handleMessage(msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MessageHandler</span> &#123;</span><br><span class="line">        <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>具体 java</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HandlerLeakActivity</span> <span class="keyword">extends</span> <span class="title class_">BaseActivity</span>&lt;ActivtyHandlerLeakBinding, BasePresenter&gt; <span class="keyword">implements</span> <span class="title class_">ArrestLeakHandler</span>.MessageHandler &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(<span class="meta">@Nullable</span> Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        initViews();</span><br><span class="line">        initHandler();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">initViews</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//发送消息A</span></span><br><span class="line">        vBinding.tvA.setOnClickListener(view -&gt; &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">            msg.obj = <span class="string">&quot;我是消息A&quot;</span>;</span><br><span class="line">            msg.what = <span class="number">1</span>;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//发送消息B</span></span><br><span class="line">        vBinding.tvB.setOnClickListener(view -&gt; &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">            msg.obj = <span class="string">&quot;我是消息B&quot;</span>;</span><br><span class="line">            msg.what = <span class="number">2</span>;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> BasePresenter <span class="title function_">initPresenter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onBackPressed</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onBackPressed();</span><br><span class="line">        finish();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> ArrestLeakHandler mHandler, mMainHandler;</span><br><span class="line">    HandlerThread mHandlerThread;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initHandler</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//①创建子线程</span></span><br><span class="line">        mHandlerThread = <span class="keyword">new</span> <span class="title class_">HandlerThread</span>(<span class="string">&quot;handlerThread&quot;</span>);</span><br><span class="line">        <span class="comment">//②开启线程</span></span><br><span class="line">        mHandlerThread.start();</span><br><span class="line">        <span class="comment">//③建立与主线程关联Handler</span></span><br><span class="line">        mMainHandler = <span class="keyword">new</span> <span class="title class_">ArrestLeakHandler</span>(<span class="built_in">this</span>);</span><br><span class="line">        mHandler = <span class="keyword">new</span> <span class="title class_">ArrestLeakHandler</span>(<span class="built_in">this</span>, mHandlerThread.getLooper());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> (msg.what) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (String) msg.obj;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1500</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                LogUtils.v(<span class="string">&quot;Handler Message---&gt;&quot;</span> + str);</span><br><span class="line">                mMainHandler.post(() -&gt; vBinding.tvShowMessage.setText(str));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        mHandler = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>注:当外部类（Activity为例）结束生命周期时（onDestroy），应当清除Handler消息队列里的所有消息（调用removeCallbacksAndMessages(null)）方法。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        mHandler = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1></li>
-<li><p>当Handler消息队列中存在未处理或正在处理的消息时，并且存在引用关系:未被处理&amp;正处理的消息-&gt;Handler实例-&gt;外部类<br>当Handler的生命周期&gt;外部类的生命周期时（当外部类需销毁时(Handler消息队列中还有未处理或正在处理消息)),将使得外部类无法被垃圾回收器(GC)回收，既造成内存泄露。</p>
-</li>
-</ul>
-<h3 id="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"><a href="#如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻" class="headerlink" title="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"></a><font color=#9dc2af>如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻</font></h3>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Handler</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Glide-缓存那些事儿</title>
-    <url>/relaxed/glide-%E7%BC%93%E5%AD%98%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</url>
-    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p> &ensp;在我们开发的时候对图片加载是必须使用的 这篇文章我们就聊聊Glide缓存。</p>
-<h2 id="Glide-缓存分几种"><a href="#Glide-缓存分几种" class="headerlink" title="Glide 缓存分几种"></a>Glide 缓存分几种</h2><p>答：缓存分为两种：内存缓存、磁盘缓存</p>
-<p>内存缓存：<br>内存缓存又分为两种：一种是：弱引用缓存、一种是： Lrucache缓存。<br>往下看Glide内存缓存是如何实现的，源码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;R&gt; LoadStatus <span class="title function_">load</span><span class="params">(</span></span><br><span class="line"><span class="params">      GlideContext glideContext,</span></span><br><span class="line"><span class="params">      Object model,</span></span><br><span class="line"><span class="params">      Key signature,</span></span><br><span class="line"><span class="params">      <span class="type">int</span> width,</span></span><br><span class="line"><span class="params">      <span class="type">int</span> height,</span></span><br><span class="line"><span class="params">      Class&lt;?&gt; resourceClass,</span></span><br><span class="line"><span class="params">      Class&lt;R&gt; transcodeClass,</span></span><br><span class="line"><span class="params">      Priority priority,</span></span><br><span class="line"><span class="params">      DiskCacheStrategy diskCacheStrategy,</span></span><br><span class="line"><span class="params">      Map&lt;Class&lt;?&gt;, Transformation&lt;?&gt;&gt; transformations,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isTransformationRequired,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isScaleOnlyOrNoTransform,</span></span><br><span class="line"><span class="params">      Options options,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isMemoryCacheable,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> useUnlimitedSourceExecutorPool,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> useAnimationPool,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> onlyRetrieveFromCache,</span></span><br><span class="line"><span class="params">      ResourceCallback cb,</span></span><br><span class="line"><span class="params">      Executor callbackExecutor)</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> VERBOSE_IS_LOGGABLE ? LogTime.getLogTime() : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成key</span></span><br><span class="line">    <span class="type">EngineKey</span> <span class="variable">key</span> <span class="operator">=</span></span><br><span class="line">        keyFactory.buildKey(</span><br><span class="line">            model,</span><br><span class="line">            signature,</span><br><span class="line">            width,</span><br><span class="line">            height,</span><br><span class="line">            transformations,</span><br><span class="line">            resourceClass,</span><br><span class="line">            transcodeClass,</span><br><span class="line">            options);</span><br><span class="line"></span><br><span class="line">    EngineResource&lt;?&gt; memoryResource;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">    <span class="comment">//进到loadFromMemory方法里面看看做了什么</span></span><br><span class="line">      memoryResource = loadFromMemory(key, isMemoryCacheable, startTime);</span><br><span class="line"></span><br><span class="line">     ...</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Nullable</span></span><br><span class="line">  <span class="keyword">private</span> EngineResource&lt;?&gt; loadFromMemory(</span><br><span class="line">      EngineKey key, <span class="type">boolean</span> isMemoryCacheable, <span class="type">long</span> startTime) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isMemoryCacheable) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 弱引用</span></span><br><span class="line">    EngineResource&lt;?&gt; active = loadFromActiveResources(key);</span><br><span class="line">    <span class="keyword">if</span> (active != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VERBOSE_IS_LOGGABLE) &#123;</span><br><span class="line">        logWithTimeAndKey(<span class="string">&quot;Loaded resource from active resources&quot;</span>, startTime, key);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> active;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// LruCaChe</span></span><br><span class="line">    EngineResource&lt;?&gt; cached = loadFromCache(key);</span><br><span class="line">    <span class="keyword">if</span> (cached != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VERBOSE_IS_LOGGABLE) &#123;</span><br><span class="line">        logWithTimeAndKey(<span class="string">&quot;Loaded resource from cache&quot;</span>, startTime, key);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> cached;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果返回null ，从网络或其它地方获取</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>可以看到，Engine类中load方法图片加载策略，其中生成key的参数中包含width 、height<br> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">EngineKey</span> <span class="variable">key</span> <span class="operator">=</span> keyFactory.buildKey(model, signature, width, height, transformations,</span><br><span class="line">      resourceClass, transcodeClass, options);</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li> width  &amp; height 就是ImageView的尺寸，生成key时为什么会传入ImageView的尺寸呢？</li>
-<li>注：Glide 通过key读取缓存图片时，会校验当前的图片尺寸是否与imageView的尺寸相等，如果相等直接取出来显示，如果不相等，会重新生成新的缓存数据。</li>
-</ul>
-<h3 id="弱引用缓存："><a href="#弱引用缓存：" class="headerlink" title="弱引用缓存："></a>弱引用缓存：</h3><p> &ensp;接着往下看，首先从弱引用中获取数据：<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  EngineResource&lt;?&gt; active = loadFromActiveResources(key, isMemoryCacheable);</span><br><span class="line">  //方法内部实现</span><br><span class="line"> @Nullable</span><br><span class="line">  private EngineResource&lt;?&gt; loadFromActiveResources(Key key) &#123;</span><br><span class="line">    EngineResource&lt;?&gt; active = activeResources.get(key);</span><br><span class="line">    if (active != null) &#123;</span><br><span class="line">      active.acquire();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return active;</span><br><span class="line">  &#125;</span><br><span class="line">//方法 acquire</span><br><span class="line">synchronized void acquire() &#123;</span><br><span class="line">    if (isRecycled) &#123;</span><br><span class="line">      throw new IllegalStateException(&quot;Cannot acquire a recycled resource&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    ++acquired;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>注：如果弱引用中获取到数据，计数器acquired+1，如果获取不到active对象在合适的时机被回收，走LruCaChe缓存，接着往下看：</li>
-</ul>
-<h3 id="LruCaChe缓存："><a href="#LruCaChe缓存：" class="headerlink" title="LruCaChe缓存："></a>LruCaChe缓存：</h3><p>弱引用中未获取到数据，则通过LruCaChe获取，源码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> EngineResource&lt;?&gt; loadFromCache(Key key) &#123;</span><br><span class="line">    EngineResource&lt;?&gt; cached = getEngineResourceFromCache(key);</span><br><span class="line">    <span class="keyword">if</span> (cached != <span class="literal">null</span>) &#123;</span><br><span class="line">      cached.acquire();</span><br><span class="line">      activeResources.activate(key, cached);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cached;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注：如果cached对象不为空，则调用activeResources.activate方法将其加入弱引用缓存中，且计数器acquired+1</li>
-</ul>
-<p>进入getEngineResourceFromCache方法看下具体实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> EngineResource&lt;?&gt; getEngineResourceFromCache(Key key) &#123;</span><br><span class="line">  Resource&lt;?&gt; cached = cache.remove(key);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> EngineResource&lt;?&gt; result;</span><br><span class="line">  <span class="keyword">if</span> (cached == <span class="literal">null</span>) &#123;</span><br><span class="line">    result = <span class="literal">null</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cached <span class="keyword">instanceof</span> EngineResource) &#123;</span><br><span class="line">    <span class="comment">// Save an object allocation if we&#x27;ve cached an EngineResource (the typical case).</span></span><br><span class="line">    result = (EngineResource&lt;?&gt;) cached;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result =</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">EngineResource</span>&lt;&gt;(</span><br><span class="line">            cached, <span class="comment">/*isMemoryCacheable=*/</span> <span class="literal">true</span>, <span class="comment">/*isRecyclable=*/</span> <span class="literal">true</span>, key, <span class="comment">/*listener=*/</span> <span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>总结：之所以采用内存缓存是为防止应用重复将图片读入到内存，造成内存资源浪费。</p>
-<ul>
-<li>注：从上面源码中我们看到，读内存缓存的流程为：先从弱引用中取数据，如果取到，计数器acquired+1返回，如果不存在，则从LruCaChe中取，如果取到，计数器acquired+1返回。如果LruCaChe中不存key对应在数据，则会走磁盘缓存，往下看：</li>
-</ul>
-<h3 id="磁盘缓存："><a href="#磁盘缓存：" class="headerlink" title="磁盘缓存："></a>磁盘缓存：</h3><p>先了解以下磁盘缓存的策略有哪些?</p>
-<ul>
-<li>ALL:缓存原图(SOURCE)和处理图(RESULT)</li>
-<li>NONE:什么都不缓存</li>
-<li>SOURCE:只缓存原图(SOURCE)</li>
-<li>RESULT:只缓存处理图(RESULT) —默认值</li>
-</ul>
-<p>上面讲的是内存读取数据，如果内存没有取到，则Glide会从磁盘缓存取数据，通过EngineJob开启线程池去加载图片。这里有2个关键类：DecodeJob 和EngineJob。<br>一个图片的加载在 DecodeJob 这个类中，这个任务由 EngineJob 这个线程池去执行的。去到 run 方法，源码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runWrapped</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (runReason) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        stage = getNextStage(Stage.INITIALIZE);</span><br><span class="line">        currentGenerator = getNextGenerator();</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SWITCH_TO_SOURCE_SERVICE:</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DECODE_DATA:</span><br><span class="line">        decodeFromRetrievedData();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Unrecognized run reason: &quot;</span> + runReason);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>EngineJob 内部维护了线程池，用来管理资源加载，当资源加载完毕的时候通知回调；<br>DecodeJob是线程池中的一个任务。<br>&ensp;磁盘缓存是通过DiskLruCache来管理的,根据不同的缓存策略，会有2种类型的图片：</p>
-<ul>
-<li>DATA：原始图片</li>
-<li> RESOURCE：转换后的图片<br>磁盘缓存依次通过ResourcesCacheGenerator（转换过的缓存数据）、SourceGenerator（未经转换的原始的缓存数据）、DataCacheGenerator（网络获取图片数据后根据缓存策略的不同去缓存不同的图片到磁盘上）来获取缓存数据。<br>总结：防止应用重复的从网络或者其他地方下载和读取数据</li>
-</ul>
-<p>关于LruCache源码请看：<a href="/relaxed/LinkedHashMap-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" title="LinkedHashMap原理分析">LinkedHashMap原理分析</a><br>关于LinedHashMap原理请看： <a href="/relaxed/LruCache-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" title="LruCache原理分析">LruCache原理分析</a></p>
-<h2 id="Glide读取图片，获取顺序"><a href="#Glide读取图片，获取顺序" class="headerlink" title="Glide读取图片，获取顺序"></a>Glide读取图片，获取顺序</h2><p>答： 弱引用–&gt; LruCache算法–&gt; 磁盘缓存(DiskLruCache)</p>
-<blockquote>
-<p>我们APP中加载某张图片时，先去弱引用（WeakReference）中寻找，如果弱引用（WeakReference）中有，则从WeakReference中取出图片使用，如果WeakReference中没有图片则去LruCache中寻找图片，如果LruCache中有，则取出来使用，并将该图片放入WeakReference中，如果LruCache中没有，则从磁盘缓存/网络中加载图片。</p>
-</blockquote>
-<h2 id="Glide缓存图片，写入顺序"><a href="#Glide缓存图片，写入顺序" class="headerlink" title="Glide缓存图片，写入顺序"></a>Glide缓存图片，写入顺序</h2><p>答：弱引用 –&gt; LruCache算法 –&gt; 磁盘缓存中(DiskLruCache)</p>
-<blockquote>
-<p>当图片不存在的时候，会先从网络下载，然后将图片存入弱引用中，Glide会采用一个acquired变量用来记录图片被引用的次数<br>当acquired变量大于0的时候，说明图片正在使用中，也就是将图片放到弱引用缓存当中。<br>如果acquired变量等于0了，说明图片已经不再被使用了，那么此时会调用方法来释放资源，首先会将缓存图片从弱引用中移除，然后再将它put到LruResourceCache当中。<br>这样也就实现了正在使用中的图片使用弱引用来进行缓存，不在使用中的图片使用LruCache来进行缓存的功能。<br>上面磁盘缓存分析中我们知道，当图片资源加载到DecodeJob这个类中，任务是有EngineJob线程池去执行的，假设我们将缓存策略设置为 DiskCacheStrategy.ALL 分析下源码中是如何执行的，下面先看runWrapped方法：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runWrapped</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (runReason) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        stage = getNextStage(Stage.INITIALIZE);</span><br><span class="line">        currentGenerator = getNextGenerator();</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SWITCH_TO_SOURCE_SERVICE:</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DECODE_DATA:</span><br><span class="line">        decodeFromRetrievedData();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Unrecognized run reason: &quot;</span> + runReason);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>注：由于我们的策略为DiskCacheStrategy.ALL 所以diskCacheStrategy.decodeCachedResource() 为true，即会解析解码的流程，所以 State 被赋值为 Stage.RESOURCE_CACHE，如下：<br>进入getNextStage方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Stage <span class="title function_">getNextStage</span><span class="params">(Stage current)</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (current) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        <span class="keyword">return</span> diskCacheStrategy.decodeCachedResource()</span><br><span class="line">            ? Stage.RESOURCE_CACHE</span><br><span class="line">            : getNextStage(Stage.RESOURCE_CACHE);</span><br><span class="line">      <span class="keyword">case</span> RESOURCE_CACHE:</span><br><span class="line">        <span class="keyword">return</span> diskCacheStrategy.decodeCachedData()</span><br><span class="line">            ? Stage.DATA_CACHE</span><br><span class="line">            : getNextStage(Stage.DATA_CACHE);</span><br><span class="line">      <span class="keyword">case</span> DATA_CACHE:</span><br><span class="line">        <span class="comment">// Skip loading from source if the user opted to only retrieve the resource from cache.</span></span><br><span class="line">        <span class="keyword">return</span> onlyRetrieveFromCache ? Stage.FINISHED : Stage.SOURCE;</span><br><span class="line">      <span class="keyword">case</span> SOURCE:</span><br><span class="line">      <span class="keyword">case</span> FINISHED:</span><br><span class="line">        <span class="keyword">return</span> Stage.FINISHED;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Unrecognized stage: &quot;</span> + current);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>注：currentGenerator = getNextGenerator() 拿到当前的解码器为 ResourceCacheGenerator然后 调用 runGenerators() 方法。看下里面具体实现。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runGenerators</span><span class="params">()</span> &#123;</span><br><span class="line">    currentThread = Thread.currentThread();</span><br><span class="line">    startFetchTime = LogTime.getLogTime();</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">isStarted</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!isCancelled</span><br><span class="line">        &amp;&amp; currentGenerator != <span class="literal">null</span></span><br><span class="line">        &amp;&amp; !(isStarted = currentGenerator.startNext())) &#123;</span><br><span class="line">      stage = getNextStage(stage);</span><br><span class="line">      currentGenerator = getNextGenerator();</span><br><span class="line"></span><br><span class="line">      <span class="comment">//stage == Stage.SOURCE)时退出,并调用reschedule</span></span><br><span class="line">      <span class="keyword">if</span> (stage == Stage.SOURCE) &#123;</span><br><span class="line">        reschedule();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// We&#x27;ve run out of stages and generators, give up.</span></span><br><span class="line">    <span class="keyword">if</span> ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) &#123;</span><br><span class="line">      notifyFailed();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Otherwise a generator started a new load and we expect to be called back in</span></span><br><span class="line">    <span class="comment">// onDataFetcherReady.</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>注：while循环不断通过startNext()解析不同的缓存策略，直到stage == Stage.SOURCE 后退出。</p>
-<p>下面进入startNext看下源码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startNext</span><span class="params">()</span> &#123;</span><br><span class="line">   List&lt;Key&gt; sourceIds = helper.getCacheKeys();</span><br><span class="line">   ...</span><br><span class="line"> <span class="comment">//由于第一次拿不到key，while会一直查找</span></span><br><span class="line">   <span class="keyword">while</span> (modelLoaders == <span class="literal">null</span> || !hasNextModelLoader()) &#123;</span><br><span class="line">     resourceClassIndex++;</span><br><span class="line">     <span class="keyword">if</span> (resourceClassIndex &gt;= resourceClasses.size()) &#123;</span><br><span class="line">       sourceIdIndex++;</span><br><span class="line">   <span class="comment">//直到返回false</span></span><br><span class="line">       <span class="keyword">if</span> (sourceIdIndex &gt;= sourceIds.size()) &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       resourceClassIndex = <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="type">Key</span> <span class="variable">sourceId</span> <span class="operator">=</span> sourceIds.get(sourceIdIndex);</span><br><span class="line">    ...</span><br><span class="line">     currentKey =</span><br><span class="line">         <span class="keyword">new</span> <span class="title class_">ResourceCacheKey</span>( <span class="comment">// NOPMD AvoidInstantiatingObjectsInLoops</span></span><br><span class="line">             helper.getArrayPool(),</span><br><span class="line">             sourceId,</span><br><span class="line">             helper.getSignature(),</span><br><span class="line">             helper.getWidth(),</span><br><span class="line">             helper.getHeight(),</span><br><span class="line">             transformation,</span><br><span class="line">             resourceClass,</span><br><span class="line">             helper.getOptions());</span><br><span class="line">     cacheFile = helper.getDiskCache().get(currentKey);</span><br><span class="line">     <span class="keyword">if</span> (cacheFile != <span class="literal">null</span>) &#123;</span><br><span class="line">       sourceKey = sourceId;</span><br><span class="line">       modelLoaders = helper.getModelLoaders(cacheFile);</span><br><span class="line">       modelLoaderIndex = <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   loadData = <span class="literal">null</span>;</span><br><span class="line">   <span class="type">boolean</span> <span class="variable">started</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">while</span> (!started &amp;&amp; hasNextModelLoader()) &#123;</span><br><span class="line">     ModelLoader&lt;File, ?&gt; modelLoader = modelLoaders.get(modelLoaderIndex++);</span><br><span class="line">     loadData =</span><br><span class="line">         modelLoader.buildLoadData(</span><br><span class="line">             cacheFile, helper.getWidth(), helper.getHeight(), helper.getOptions());</span><br><span class="line">     <span class="keyword">if</span> (loadData != <span class="literal">null</span> &amp;&amp; helper.hasLoadPath(loadData.fetcher.getDataClass())) &#123;</span><br><span class="line">       started = <span class="literal">true</span>;</span><br><span class="line">       loadData.fetcher.loadData(helper.getPriority(), <span class="built_in">this</span>);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> started;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>下面看下reschedule()方法源码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reschedule</span><span class="params">()</span> &#123;</span><br><span class="line">  runReason = RunReason.SWITCH_TO_SOURCE_SERVICE;</span><br><span class="line">  callback.reschedule(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：重复调用 runWrapped() 方法，但此时的 runReason 已经变成了 SWITCH_TO_SOURCE_SERVICE，所以它会执行 runGenerators() 方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runGenerators</span><span class="params">()</span> &#123;</span><br><span class="line">   currentThread = Thread.currentThread();</span><br><span class="line">   startFetchTime = LogTime.getLogTime();</span><br><span class="line">   <span class="type">boolean</span> <span class="variable">isStarted</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">while</span> (!isCancelled</span><br><span class="line">       &amp;&amp; currentGenerator != <span class="literal">null</span></span><br><span class="line">       &amp;&amp; !(isStarted = currentGenerator.startNext())) &#123;</span><br><span class="line">     stage = getNextStage(stage);</span><br><span class="line">     currentGenerator = getNextGenerator();</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (stage == Stage.SOURCE) &#123;</span><br><span class="line">       reschedule();</span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span> ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) &#123;</span><br><span class="line">     notifyFailed();</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>注：此时 currentGenerator 为 SourceGennerator 已经不为null。</p>
-<p>接着看SourceGennerator类中startNext：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startNext</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (dataToCache != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="type">Object</span> <span class="variable">data</span> <span class="operator">=</span> dataToCache;</span><br><span class="line">      dataToCache = <span class="literal">null</span>;</span><br><span class="line">      <span class="comment">// 存储到 DiskLruCache</span></span><br><span class="line">      cacheData(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sourceCacheGenerator != <span class="literal">null</span> &amp;&amp; sourceCacheGenerator.startNext()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sourceCacheGenerator = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    loadData = <span class="literal">null</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">started</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!started &amp;&amp; hasNextModelLoader()) &#123;</span><br><span class="line">      loadData = helper.getLoadData().get(loadDataListIndex++);</span><br><span class="line">      <span class="keyword">if</span> (loadData != <span class="literal">null</span></span><br><span class="line">          &amp;&amp; (helper.getDiskCacheStrategy().isDataCacheable(loadData.fetcher.getDataSource())</span><br><span class="line">              || helper.hasLoadPath(loadData.fetcher.getDataClass()))) &#123;</span><br><span class="line">        started = <span class="literal">true</span>;</span><br><span class="line">        /加载数据</span><br><span class="line">        startNextLoad(loadData);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> started;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>硬盘缓存时通过在 EngineJob 中的 DecodeJob 中完成的，先通过ResourcesCacheGenerator、DataCacheGenerator 看是否能从 DiskLruCache 拿到数据，如果不能，从SourceGenerator去解析数据，并把数据存储到 DiskLruCache 中，后面通过 DataCacheGenerator 的 startNext() 去分发 fetcher 。<br>最后会回调 EngineJob 的 onResourceReady() 方法了，该方法会加载图片，并把数据存到弱引用中</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Handler-消息通讯机制详解</title>
-    <url>/relaxed/Handler-%E6%B6%88%E6%81%AF%E9%80%9A%E8%AE%AF%E6%9C%BA%E5%88%B6%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>Android开发中，Handler媒介机制十分常用，今天我们来详细聊一聊Handler通讯机制是如何实现的。</li>
-</ul>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://s1.ax1x.com/2022/05/05/Omb4mt.png"><img src="https://s1.ax1x.com/2022/05/05/Omb4mt.png" alt="Omb4mt.png"></a></p>
-<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>在多线程的应用场景中，将工作线程中需更新UI的操作信息 传递到 UI主线程，从而实现工作线程对UI线程的更新，最终实现异步消息的处理。</p>
-<h1 id="概念描述"><a href="#概念描述" class="headerlink" title="概念描述"></a>概念描述</h1><p>Handler、Message、MessageQueue、Looper相关概念如下图。</p>
-<!--MarkDown 不支持单元格合并，即使用Html -->
-<table>
-<!--this is title-->
-    <tr align = "center" bgcolor = "#91bdb6">
-        <td>概念</td>
-        <td>定义</td>
-        <td>作用</td>
-        <!-- <td>备注</td> -->
-    </tr>
-    <!--this is Main-->
-    <tr align="center">
-        <td>主线程<br/><font color = "#91bdb6">( UI线程、Main Thread )</font></td>
-        <td>系统首次启动，会创建主线程</td>
-        <td>处理UI相关操作<br/><font color = "#91bdb6">( 如：更新UI )</font></td>
-        <!-- <td rowspan="2">主线程与子线程<br/>通讯媒介Handler</td> -->
-    </tr>
-      <!--this is Thread-->
-    <tr align="center">
-        <td>子线程<br/><font color = "#91bdb6">（ 工作线程 ）</font></td>
-        <td>人为开启的线程</td>
-        <td>执行耗时任务<br/><font color = "#91bdb6">( 如 网络请求、数据加载等 )</font></td>
-    </tr>
-      <!--this is Message-->
-    <tr align="center">
-      <td>消息<br/><font color = "#91bdb6">（ Message ）</font></td>
-      <td>线程间通讯数据单元<br/><font color = "#91bdb6">（handler接收&处理消息对象）</font></td>
-      <td>存储业务操作信息<br/><font color = "#91bdb6">（ Message ）</font></td>
-    </tr>
-      <!--this is Message Queue-->
-    <tr align="center">
-        <td>消息队列<br/><font color = "#91bdb6">（ Message Queue ）</font></td>
-        <td>数据结构<br/><font color = "#91bdb6">（ 以时间顺序排列 ）</font></td>
-        <td>存储Handler发送的消息<br/><font color = "#91bdb6">（ Message ）</font></td>
-    </tr>
-      <!--this is Handler-->
-    <tr align="center">
-        <td>处理着<br/><font color = "#91bdb6">（ Handler ）</font></td>
-        <td>主线程与子线程通讯的媒介<br/>线程消息的处理者</td>
-        <td>将消息( Message ）添加到<br/>消息队列( Message Queue )中<br/> 处理循环器（ Looper ）分派的消息</td>
-    </tr>
-    <tr align="center">
-        <td>循环器<br/><font color = "#91bdb6">（ Looper ）</font></td>
-        <td>消息队列( Message Queue )<br/>与处理者 （ Handler ）<br/>通讯媒介</td>
-        <td>消息循环 即：<br/><font color = "#91bdb6"> 消息获取：循环取出消息队列<br/>（ Message Queue ）中的<br/>消息（ Message ）<br/> 消息分发：将取出来的消息<br/>（ Message ）发送给对应的<br/>处理者（ Handler ）</font></td>
-    </tr>
-</table>
-
-<h1 id="机制说明"><a href="#机制说明" class="headerlink" title="机制说明"></a>机制说明</h1><p>Handler消息传递机制:多个线程并发更新UI时，保证线程安全<br><a href="https://s1.ax1x.com/2022/05/06/OmxK4P.png"><img src="https://s1.ax1x.com/2022/05/06/OmxK4P.png" alt="示例图.png"></a><br>注：<a href="https://juejin.cn/post/6844903890224152584">图解Java线程安全</a></p>
-<h1 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h1><h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><ul>
-<li><p>异步通信( 主线程中创建 )</p>
-<blockquote>
-<blockquote>
-<p>处理者（ Handler ）对象</p>
-<blockquote>
-<p>注：Handler会自定绑定主线程中的Looper&amp;MessageQueue</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>处理器（ Looper ）对象</p>
-<blockquote>
-<p>注：Looper &amp; MessageQueue都是在主线程中</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>消息队列（ Message Queue ）对象</p>
-<blockquote>
-<p>注： 创建MessageQueue后，Looper会自动进入循环状态，有消息则循环取，没有，则阻塞状态，发现消息后会被唤醒继续循环读取。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-<li><p>消息入队列</p>
-<blockquote>
-<p>工作线程中通过Handler的sendMessage()方法发送消息（ Message ）到消息队列（ MessageQueue ）中，这是消息完成入队列操作。</p>
-<blockquote>
-<p>注：此消息内容就是工作线程对UI主线程的操作</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>消息循环</p>
-<blockquote>
-<p>第一步：消息出队列：Looper循环取出消息队列（ MessageQueue ）中的消息（ Message ）交给第二步消息分发。<br>第二步：消息分发：Looper将取出来的消息（ Message ）发送给创建消息的处理者（ Handler ）</p>
-<blockquote>
-<p>注：循环器( Looper )循环取消息时，若发现消息队列（ MessageQueue ）中为空，则会线程阻塞，待又消息时再次被唤醒继续循环读取。</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>消息处理</p>
-<blockquote>
-<p>处理者( Handler ) 在接收处理器（ Looper ）发送过来的消息（ Message ）会进行UI操作。</p>
-</blockquote>
-</li>
-</ul>
-<p><a href="https://s1.ax1x.com/2022/05/06/OuFqzR.png"><img src="https://s1.ax1x.com/2022/05/06/OuFqzR.png" alt="示意图.png"></a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Android开发中，UI操作在主线程中进行，但是主线程又不能进行耗时操作，否则会阻塞线程，产生我们常见的ANR异常，所以常常把耗时操作放到其它子线程进行。如果在子线程中需要更新UI，一般是通过 Handler发送消息( message ），主线程接收消息并且进行相应的处理。以上就是Handler通讯消息传递机制的详解。</p>
-<h3 id="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"><a href="#如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻" class="headerlink" title="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"></a><font color=#9dc2af>如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻</font></h3>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Handler</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LinkedHashMap-原理分析</title>
     <url>/relaxed/LinkedHashMap-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>LinkedHashMap 是如何做到LruCache ，下面我们从源码中看一看</p>
@@ -1071,6 +840,279 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EventBus使用方式</title>
+    <url>/relaxed/EventBus%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>Android开发中 EventBus的使用<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><a href="https://s1.ax1x.com/2022/05/09/OGINDg.png"><img src="https://s1.ax1x.com/2022/05/09/OGINDg.png" alt="示意图.png"></a><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1></li>
+<li>一套 <font color= "#c85863" >Android / Java</font> 事件订阅 / 发布框架，由greenrobot团队开源，它的出现简化了应用程序内各个组件之间进行通信的复杂度，尤其是碎片之间进行通信的问题。</li>
+</ul>
+<h1 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">eventbus : <span class="string">&#x27;org.greenrobot:eventbus:3.2.0&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="注册、注销"><a href="#注册、注销" class="headerlink" title="注册、注销"></a>注册、注销</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onStart</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>.onStart();</span><br><span class="line">    EventBus.getDefault().register(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>.onDestroy();</span><br><span class="line">     EventBus.getDefault().unregister(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="订阅者"><a href="#订阅者" class="headerlink" title="订阅者"></a>订阅者</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Subscribe(threadMode = ThreadMode.MAIN)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onUpDateEvent</span><span class="params">(BaseMessageEvent messageEvent )</span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="发布事件"><a href="#发布事件" class="headerlink" title="发布事件"></a>发布事件</h2><h3 id="普通事件"><a href="#普通事件" class="headerlink" title="普通事件"></a>普通事件</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">EventBus.getDefault().post(<span class="keyword">new</span> <span class="title class_">BaseMessageEvent</span>(<span class="string">&quot;&quot;</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="粘性事件"><a href="#粘性事件" class="headerlink" title="粘性事件"></a>粘性事件</h3><ul>
+<li>黏性事件，就是指发送了该事件之后再订阅者依然能够接收到的事件。使用黏性事件的时候有两个地方需要做些修改。分别在发布和订阅中来使用。<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">EventBus.getDefault().postSticky(<span class="keyword">new</span> <span class="title class_">BaseMessageEvent</span>(<span class="string">&quot;&quot;</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Subscribe(threadMode = ThreadMode.MAIN , sticky = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onUpDateEvent</span><span class="params">(BaseMessageEvent messageEvent )</span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="获取事件"><a href="#获取事件" class="headerlink" title="获取事件"></a>获取事件</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">EventBus.getDefault().getStickyEvent(BaseMessageEvent.class);</span><br></pre></td></tr></table></figure>
+<h4 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">EventBus.getDefault().removeStickyEvent(BaseMessageEvent.class);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><ul>
+<li>即priority。它用来指定订阅方法的优先级，是一个整数类型的值，默认是0，值越大表示优先级越大。在某个事件被发布出来的时候，优先级较高的订阅方法会首先接受到事件。</li>
+<li>特别注意：<ul>
+<li> 订阅方法，需要与threadMode一致，并且优先级略高</li>
+<li> 优先级不会影响具有不同ThreadModes的订阅者的传递顺序</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Subscribe(threadMode = ThreadMode.POSTING , sticky = true, priority = 1)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onUpDateEvent</span><span class="params">(BaseMessageEvent messageEvent )</span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="取消事件传递"><a href="#取消事件传递" class="headerlink" title="取消事件传递"></a>取消事件传递</h1><ul>
+<li><p>事件的优先级越高接收的数据最快，所以当优先级不想分发事件给低级别的事件时，可以使用cancelEventDelivery （Object event）取消事件传递</p>
+</li>
+<li><p>注：当优先级更高的想取消事件传递时，只有当threadMode = ThreadMode.POSTING处于此状态才能取消事件传递有效。其他线程模型属性不行</p>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>EventBus基本使用方式就介绍到这里，EventBus源码分析请看：<a href="#">Post not found: EventBus原理分析 EventBus源码分析</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>EventBus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handler-内存泄漏解决方案</title>
+    <url>/relaxed/Handler-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>Android开发中，内存泄漏是经常发生的，今天来详细聊一聊Handler使用过程中产生内存泄漏的场景以及对应的解决方案。</li>
+</ul>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://s1.ax1x.com/2022/05/04/OEUUXD.png"><img src="https://s1.ax1x.com/2022/05/04/OEUUXD.png" alt="OEUUXD.png"></a></p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ul>
+<li>Android中使用Handler导致内存泄漏原因分析。当一个对象已经不再被使用时，本该被回收但却因为有另外一个正在使用的对象持有它的引用从而导致它不能被回收，导致了内存泄漏。</li>
+</ul>
+<h1 id="原因详解"><a href="#原因详解" class="headerlink" title="原因详解"></a>原因详解</h1><ul>
+<li>在Handler消息队列还有未处理的消息 / 正在处理消息时，消息队列中的Message持有Handler实例的引用，由于Handler = 非静态内部类 &amp; 匿名内部类又默认持有外部类的引用。如图</li>
+</ul>
+<p><a href="https://s1.ax1x.com/2022/05/04/OE88YT.png"><img src="https://s1.ax1x.com/2022/05/04/OE88YT.png" alt="示例1.png"></a></p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
+<li><p>静态内部类+弱引用</p>
+</li>
+<li><p>静态内部类 不默认持有外部类的引用，从而使得 “未被处理&amp;正处理的消息 -&gt; Handler实例 -&gt; 外部类”的引用关系不复存在。</p>
+</li>
+<li><p>使用WeakReference弱引用持有Activity实例的原因：弱引用的对象拥有短暂的生命周期。在垃圾回收器线程扫描时，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存</p>
+</li>
+<li><p>工具类封装</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.linked.business.handler;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Handler;</span><br><span class="line"><span class="keyword">import</span> android.os.Looper;</span><br><span class="line"><span class="keyword">import</span> android.os.Message;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.ref.WeakReference;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrestLeakHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MessageHandler&gt; reference;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrestLeakHandler</span><span class="params">(MessageHandler messageHandler)</span> &#123;</span><br><span class="line">        reference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(messageHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ArrestLeakHandler</span><span class="params">(MessageHandler messageHandler, Looper looper)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(looper);</span><br><span class="line">        reference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(messageHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 复写handlerMessage 做更新UI的操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="type">MessageHandler</span> <span class="variable">messageHandler</span> <span class="operator">=</span> reference.get();</span><br><span class="line">        <span class="keyword">if</span> (messageHandler != <span class="literal">null</span>) &#123;</span><br><span class="line">            messageHandler.handleMessage(msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MessageHandler</span> &#123;</span><br><span class="line">        <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>具体 java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HandlerLeakActivity</span> <span class="keyword">extends</span> <span class="title class_">BaseActivity</span>&lt;ActivtyHandlerLeakBinding, BasePresenter&gt; <span class="keyword">implements</span> <span class="title class_">ArrestLeakHandler</span>.MessageHandler &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(<span class="meta">@Nullable</span> Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        initViews();</span><br><span class="line">        initHandler();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">initViews</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//发送消息A</span></span><br><span class="line">        vBinding.tvA.setOnClickListener(view -&gt; &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">            msg.obj = <span class="string">&quot;我是消息A&quot;</span>;</span><br><span class="line">            msg.what = <span class="number">1</span>;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//发送消息B</span></span><br><span class="line">        vBinding.tvB.setOnClickListener(view -&gt; &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Message</span>();</span><br><span class="line">            msg.obj = <span class="string">&quot;我是消息B&quot;</span>;</span><br><span class="line">            msg.what = <span class="number">2</span>;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> BasePresenter <span class="title function_">initPresenter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onBackPressed</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onBackPressed();</span><br><span class="line">        finish();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> ArrestLeakHandler mHandler, mMainHandler;</span><br><span class="line">    HandlerThread mHandlerThread;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initHandler</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//①创建子线程</span></span><br><span class="line">        mHandlerThread = <span class="keyword">new</span> <span class="title class_">HandlerThread</span>(<span class="string">&quot;handlerThread&quot;</span>);</span><br><span class="line">        <span class="comment">//②开启线程</span></span><br><span class="line">        mHandlerThread.start();</span><br><span class="line">        <span class="comment">//③建立与主线程关联Handler</span></span><br><span class="line">        mMainHandler = <span class="keyword">new</span> <span class="title class_">ArrestLeakHandler</span>(<span class="built_in">this</span>);</span><br><span class="line">        mHandler = <span class="keyword">new</span> <span class="title class_">ArrestLeakHandler</span>(<span class="built_in">this</span>, mHandlerThread.getLooper());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> (msg.what) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (String) msg.obj;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1500</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                LogUtils.v(<span class="string">&quot;Handler Message---&gt;&quot;</span> + str);</span><br><span class="line">                mMainHandler.post(() -&gt; vBinding.tvShowMessage.setText(str));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        mHandler = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>注:当外部类（Activity为例）结束生命周期时（onDestroy），应当清除Handler消息队列里的所有消息（调用removeCallbacksAndMessages(null)）方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        mHandler = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1></li>
+<li><p>当Handler消息队列中存在未处理或正在处理的消息时，并且存在引用关系:未被处理&amp;正处理的消息-&gt;Handler实例-&gt;外部类<br>当Handler的生命周期&gt;外部类的生命周期时（当外部类需销毁时(Handler消息队列中还有未处理或正在处理消息)),将使得外部类无法被垃圾回收器(GC)回收，既造成内存泄露。</p>
+</li>
+</ul>
+<h3 id="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"><a href="#如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻" class="headerlink" title="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"></a><font color=#9dc2af>如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻</font></h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Handler</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Glide-缓存那些事儿</title>
+    <url>/relaxed/glide-%E7%BC%93%E5%AD%98%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</url>
+    <content><![CDATA[<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p> &ensp;在我们开发的时候对图片加载是必须使用的 这篇文章我们就聊聊Glide缓存。</p>
+<h2 id="Glide-缓存分几种"><a href="#Glide-缓存分几种" class="headerlink" title="Glide 缓存分几种"></a>Glide 缓存分几种</h2><p>答：缓存分为两种：内存缓存、磁盘缓存</p>
+<p>内存缓存：<br>内存缓存又分为两种：一种是：弱引用缓存、一种是： Lrucache缓存。<br>往下看Glide内存缓存是如何实现的，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;R&gt; LoadStatus <span class="title function_">load</span><span class="params">(</span></span><br><span class="line"><span class="params">      GlideContext glideContext,</span></span><br><span class="line"><span class="params">      Object model,</span></span><br><span class="line"><span class="params">      Key signature,</span></span><br><span class="line"><span class="params">      <span class="type">int</span> width,</span></span><br><span class="line"><span class="params">      <span class="type">int</span> height,</span></span><br><span class="line"><span class="params">      Class&lt;?&gt; resourceClass,</span></span><br><span class="line"><span class="params">      Class&lt;R&gt; transcodeClass,</span></span><br><span class="line"><span class="params">      Priority priority,</span></span><br><span class="line"><span class="params">      DiskCacheStrategy diskCacheStrategy,</span></span><br><span class="line"><span class="params">      Map&lt;Class&lt;?&gt;, Transformation&lt;?&gt;&gt; transformations,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isTransformationRequired,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isScaleOnlyOrNoTransform,</span></span><br><span class="line"><span class="params">      Options options,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> isMemoryCacheable,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> useUnlimitedSourceExecutorPool,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> useAnimationPool,</span></span><br><span class="line"><span class="params">      <span class="type">boolean</span> onlyRetrieveFromCache,</span></span><br><span class="line"><span class="params">      ResourceCallback cb,</span></span><br><span class="line"><span class="params">      Executor callbackExecutor)</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> VERBOSE_IS_LOGGABLE ? LogTime.getLogTime() : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成key</span></span><br><span class="line">    <span class="type">EngineKey</span> <span class="variable">key</span> <span class="operator">=</span></span><br><span class="line">        keyFactory.buildKey(</span><br><span class="line">            model,</span><br><span class="line">            signature,</span><br><span class="line">            width,</span><br><span class="line">            height,</span><br><span class="line">            transformations,</span><br><span class="line">            resourceClass,</span><br><span class="line">            transcodeClass,</span><br><span class="line">            options);</span><br><span class="line"></span><br><span class="line">    EngineResource&lt;?&gt; memoryResource;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="built_in">this</span>) &#123;</span><br><span class="line">    <span class="comment">//进到loadFromMemory方法里面看看做了什么</span></span><br><span class="line">      memoryResource = loadFromMemory(key, isMemoryCacheable, startTime);</span><br><span class="line"></span><br><span class="line">     ...</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Nullable</span></span><br><span class="line">  <span class="keyword">private</span> EngineResource&lt;?&gt; loadFromMemory(</span><br><span class="line">      EngineKey key, <span class="type">boolean</span> isMemoryCacheable, <span class="type">long</span> startTime) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isMemoryCacheable) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 弱引用</span></span><br><span class="line">    EngineResource&lt;?&gt; active = loadFromActiveResources(key);</span><br><span class="line">    <span class="keyword">if</span> (active != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VERBOSE_IS_LOGGABLE) &#123;</span><br><span class="line">        logWithTimeAndKey(<span class="string">&quot;Loaded resource from active resources&quot;</span>, startTime, key);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> active;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// LruCaChe</span></span><br><span class="line">    EngineResource&lt;?&gt; cached = loadFromCache(key);</span><br><span class="line">    <span class="keyword">if</span> (cached != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VERBOSE_IS_LOGGABLE) &#123;</span><br><span class="line">        logWithTimeAndKey(<span class="string">&quot;Loaded resource from cache&quot;</span>, startTime, key);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> cached;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果返回null ，从网络或其它地方获取</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到，Engine类中load方法图片加载策略，其中生成key的参数中包含width 、height<br> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">EngineKey</span> <span class="variable">key</span> <span class="operator">=</span> keyFactory.buildKey(model, signature, width, height, transformations,</span><br><span class="line">      resourceClass, transcodeClass, options);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li> width  &amp; height 就是ImageView的尺寸，生成key时为什么会传入ImageView的尺寸呢？</li>
+<li>注：Glide 通过key读取缓存图片时，会校验当前的图片尺寸是否与imageView的尺寸相等，如果相等直接取出来显示，如果不相等，会重新生成新的缓存数据。</li>
+</ul>
+<h3 id="弱引用缓存："><a href="#弱引用缓存：" class="headerlink" title="弱引用缓存："></a>弱引用缓存：</h3><p> &ensp;接着往下看，首先从弱引用中获取数据：<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  EngineResource&lt;?&gt; active = loadFromActiveResources(key, isMemoryCacheable);</span><br><span class="line">  //方法内部实现</span><br><span class="line"> @Nullable</span><br><span class="line">  private EngineResource&lt;?&gt; loadFromActiveResources(Key key) &#123;</span><br><span class="line">    EngineResource&lt;?&gt; active = activeResources.get(key);</span><br><span class="line">    if (active != null) &#123;</span><br><span class="line">      active.acquire();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return active;</span><br><span class="line">  &#125;</span><br><span class="line">//方法 acquire</span><br><span class="line">synchronized void acquire() &#123;</span><br><span class="line">    if (isRecycled) &#123;</span><br><span class="line">      throw new IllegalStateException(&quot;Cannot acquire a recycled resource&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    ++acquired;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>注：如果弱引用中获取到数据，计数器acquired+1，如果获取不到active对象在合适的时机被回收，走LruCaChe缓存，接着往下看：</li>
+</ul>
+<h3 id="LruCaChe缓存："><a href="#LruCaChe缓存：" class="headerlink" title="LruCaChe缓存："></a>LruCaChe缓存：</h3><p>弱引用中未获取到数据，则通过LruCaChe获取，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> EngineResource&lt;?&gt; loadFromCache(Key key) &#123;</span><br><span class="line">    EngineResource&lt;?&gt; cached = getEngineResourceFromCache(key);</span><br><span class="line">    <span class="keyword">if</span> (cached != <span class="literal">null</span>) &#123;</span><br><span class="line">      cached.acquire();</span><br><span class="line">      activeResources.activate(key, cached);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cached;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：如果cached对象不为空，则调用activeResources.activate方法将其加入弱引用缓存中，且计数器acquired+1</li>
+</ul>
+<p>进入getEngineResourceFromCache方法看下具体实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> EngineResource&lt;?&gt; getEngineResourceFromCache(Key key) &#123;</span><br><span class="line">  Resource&lt;?&gt; cached = cache.remove(key);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> EngineResource&lt;?&gt; result;</span><br><span class="line">  <span class="keyword">if</span> (cached == <span class="literal">null</span>) &#123;</span><br><span class="line">    result = <span class="literal">null</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cached <span class="keyword">instanceof</span> EngineResource) &#123;</span><br><span class="line">    <span class="comment">// Save an object allocation if we&#x27;ve cached an EngineResource (the typical case).</span></span><br><span class="line">    result = (EngineResource&lt;?&gt;) cached;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result =</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">EngineResource</span>&lt;&gt;(</span><br><span class="line">            cached, <span class="comment">/*isMemoryCacheable=*/</span> <span class="literal">true</span>, <span class="comment">/*isRecyclable=*/</span> <span class="literal">true</span>, key, <span class="comment">/*listener=*/</span> <span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结：之所以采用内存缓存是为防止应用重复将图片读入到内存，造成内存资源浪费。</p>
+<ul>
+<li>注：从上面源码中我们看到，读内存缓存的流程为：先从弱引用中取数据，如果取到，计数器acquired+1返回，如果不存在，则从LruCaChe中取，如果取到，计数器acquired+1返回。如果LruCaChe中不存key对应在数据，则会走磁盘缓存，往下看：</li>
+</ul>
+<h3 id="磁盘缓存："><a href="#磁盘缓存：" class="headerlink" title="磁盘缓存："></a>磁盘缓存：</h3><p>先了解以下磁盘缓存的策略有哪些?</p>
+<ul>
+<li>ALL:缓存原图(SOURCE)和处理图(RESULT)</li>
+<li>NONE:什么都不缓存</li>
+<li>SOURCE:只缓存原图(SOURCE)</li>
+<li>RESULT:只缓存处理图(RESULT) —默认值</li>
+</ul>
+<p>上面讲的是内存读取数据，如果内存没有取到，则Glide会从磁盘缓存取数据，通过EngineJob开启线程池去加载图片。这里有2个关键类：DecodeJob 和EngineJob。<br>一个图片的加载在 DecodeJob 这个类中，这个任务由 EngineJob 这个线程池去执行的。去到 run 方法，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runWrapped</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (runReason) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        stage = getNextStage(Stage.INITIALIZE);</span><br><span class="line">        currentGenerator = getNextGenerator();</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SWITCH_TO_SOURCE_SERVICE:</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DECODE_DATA:</span><br><span class="line">        decodeFromRetrievedData();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Unrecognized run reason: &quot;</span> + runReason);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>EngineJob 内部维护了线程池，用来管理资源加载，当资源加载完毕的时候通知回调；<br>DecodeJob是线程池中的一个任务。<br>&ensp;磁盘缓存是通过DiskLruCache来管理的,根据不同的缓存策略，会有2种类型的图片：</p>
+<ul>
+<li>DATA：原始图片</li>
+<li> RESOURCE：转换后的图片<br>磁盘缓存依次通过ResourcesCacheGenerator（转换过的缓存数据）、SourceGenerator（未经转换的原始的缓存数据）、DataCacheGenerator（网络获取图片数据后根据缓存策略的不同去缓存不同的图片到磁盘上）来获取缓存数据。<br>总结：防止应用重复的从网络或者其他地方下载和读取数据</li>
+</ul>
+<p>关于LruCache源码请看：<a href="/relaxed/LinkedHashMap-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" title="LinkedHashMap原理分析">LinkedHashMap原理分析</a><br>关于LinedHashMap原理请看： <a href="/relaxed/LruCache-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" title="LruCache原理分析">LruCache原理分析</a></p>
+<h2 id="Glide读取图片，获取顺序"><a href="#Glide读取图片，获取顺序" class="headerlink" title="Glide读取图片，获取顺序"></a>Glide读取图片，获取顺序</h2><p>答： 弱引用–&gt; LruCache算法–&gt; 磁盘缓存(DiskLruCache)</p>
+<blockquote>
+<p>我们APP中加载某张图片时，先去弱引用（WeakReference）中寻找，如果弱引用（WeakReference）中有，则从WeakReference中取出图片使用，如果WeakReference中没有图片则去LruCache中寻找图片，如果LruCache中有，则取出来使用，并将该图片放入WeakReference中，如果LruCache中没有，则从磁盘缓存/网络中加载图片。</p>
+</blockquote>
+<h2 id="Glide缓存图片，写入顺序"><a href="#Glide缓存图片，写入顺序" class="headerlink" title="Glide缓存图片，写入顺序"></a>Glide缓存图片，写入顺序</h2><p>答：弱引用 –&gt; LruCache算法 –&gt; 磁盘缓存中(DiskLruCache)</p>
+<blockquote>
+<p>当图片不存在的时候，会先从网络下载，然后将图片存入弱引用中，Glide会采用一个acquired变量用来记录图片被引用的次数<br>当acquired变量大于0的时候，说明图片正在使用中，也就是将图片放到弱引用缓存当中。<br>如果acquired变量等于0了，说明图片已经不再被使用了，那么此时会调用方法来释放资源，首先会将缓存图片从弱引用中移除，然后再将它put到LruResourceCache当中。<br>这样也就实现了正在使用中的图片使用弱引用来进行缓存，不在使用中的图片使用LruCache来进行缓存的功能。<br>上面磁盘缓存分析中我们知道，当图片资源加载到DecodeJob这个类中，任务是有EngineJob线程池去执行的，假设我们将缓存策略设置为 DiskCacheStrategy.ALL 分析下源码中是如何执行的，下面先看runWrapped方法：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runWrapped</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (runReason) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        stage = getNextStage(Stage.INITIALIZE);</span><br><span class="line">        currentGenerator = getNextGenerator();</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SWITCH_TO_SOURCE_SERVICE:</span><br><span class="line">        runGenerators();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DECODE_DATA:</span><br><span class="line">        decodeFromRetrievedData();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Unrecognized run reason: &quot;</span> + runReason);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注：由于我们的策略为DiskCacheStrategy.ALL 所以diskCacheStrategy.decodeCachedResource() 为true，即会解析解码的流程，所以 State 被赋值为 Stage.RESOURCE_CACHE，如下：<br>进入getNextStage方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Stage <span class="title function_">getNextStage</span><span class="params">(Stage current)</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (current) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZE:</span><br><span class="line">        <span class="keyword">return</span> diskCacheStrategy.decodeCachedResource()</span><br><span class="line">            ? Stage.RESOURCE_CACHE</span><br><span class="line">            : getNextStage(Stage.RESOURCE_CACHE);</span><br><span class="line">      <span class="keyword">case</span> RESOURCE_CACHE:</span><br><span class="line">        <span class="keyword">return</span> diskCacheStrategy.decodeCachedData()</span><br><span class="line">            ? Stage.DATA_CACHE</span><br><span class="line">            : getNextStage(Stage.DATA_CACHE);</span><br><span class="line">      <span class="keyword">case</span> DATA_CACHE:</span><br><span class="line">        <span class="comment">// Skip loading from source if the user opted to only retrieve the resource from cache.</span></span><br><span class="line">        <span class="keyword">return</span> onlyRetrieveFromCache ? Stage.FINISHED : Stage.SOURCE;</span><br><span class="line">      <span class="keyword">case</span> SOURCE:</span><br><span class="line">      <span class="keyword">case</span> FINISHED:</span><br><span class="line">        <span class="keyword">return</span> Stage.FINISHED;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Unrecognized stage: &quot;</span> + current);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注：currentGenerator = getNextGenerator() 拿到当前的解码器为 ResourceCacheGenerator然后 调用 runGenerators() 方法。看下里面具体实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runGenerators</span><span class="params">()</span> &#123;</span><br><span class="line">    currentThread = Thread.currentThread();</span><br><span class="line">    startFetchTime = LogTime.getLogTime();</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">isStarted</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!isCancelled</span><br><span class="line">        &amp;&amp; currentGenerator != <span class="literal">null</span></span><br><span class="line">        &amp;&amp; !(isStarted = currentGenerator.startNext())) &#123;</span><br><span class="line">      stage = getNextStage(stage);</span><br><span class="line">      currentGenerator = getNextGenerator();</span><br><span class="line"></span><br><span class="line">      <span class="comment">//stage == Stage.SOURCE)时退出,并调用reschedule</span></span><br><span class="line">      <span class="keyword">if</span> (stage == Stage.SOURCE) &#123;</span><br><span class="line">        reschedule();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// We&#x27;ve run out of stages and generators, give up.</span></span><br><span class="line">    <span class="keyword">if</span> ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) &#123;</span><br><span class="line">      notifyFailed();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Otherwise a generator started a new load and we expect to be called back in</span></span><br><span class="line">    <span class="comment">// onDataFetcherReady.</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注：while循环不断通过startNext()解析不同的缓存策略，直到stage == Stage.SOURCE 后退出。</p>
+<p>下面进入startNext看下源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startNext</span><span class="params">()</span> &#123;</span><br><span class="line">   List&lt;Key&gt; sourceIds = helper.getCacheKeys();</span><br><span class="line">   ...</span><br><span class="line"> <span class="comment">//由于第一次拿不到key，while会一直查找</span></span><br><span class="line">   <span class="keyword">while</span> (modelLoaders == <span class="literal">null</span> || !hasNextModelLoader()) &#123;</span><br><span class="line">     resourceClassIndex++;</span><br><span class="line">     <span class="keyword">if</span> (resourceClassIndex &gt;= resourceClasses.size()) &#123;</span><br><span class="line">       sourceIdIndex++;</span><br><span class="line">   <span class="comment">//直到返回false</span></span><br><span class="line">       <span class="keyword">if</span> (sourceIdIndex &gt;= sourceIds.size()) &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       resourceClassIndex = <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="type">Key</span> <span class="variable">sourceId</span> <span class="operator">=</span> sourceIds.get(sourceIdIndex);</span><br><span class="line">    ...</span><br><span class="line">     currentKey =</span><br><span class="line">         <span class="keyword">new</span> <span class="title class_">ResourceCacheKey</span>( <span class="comment">// NOPMD AvoidInstantiatingObjectsInLoops</span></span><br><span class="line">             helper.getArrayPool(),</span><br><span class="line">             sourceId,</span><br><span class="line">             helper.getSignature(),</span><br><span class="line">             helper.getWidth(),</span><br><span class="line">             helper.getHeight(),</span><br><span class="line">             transformation,</span><br><span class="line">             resourceClass,</span><br><span class="line">             helper.getOptions());</span><br><span class="line">     cacheFile = helper.getDiskCache().get(currentKey);</span><br><span class="line">     <span class="keyword">if</span> (cacheFile != <span class="literal">null</span>) &#123;</span><br><span class="line">       sourceKey = sourceId;</span><br><span class="line">       modelLoaders = helper.getModelLoaders(cacheFile);</span><br><span class="line">       modelLoaderIndex = <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   loadData = <span class="literal">null</span>;</span><br><span class="line">   <span class="type">boolean</span> <span class="variable">started</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">while</span> (!started &amp;&amp; hasNextModelLoader()) &#123;</span><br><span class="line">     ModelLoader&lt;File, ?&gt; modelLoader = modelLoaders.get(modelLoaderIndex++);</span><br><span class="line">     loadData =</span><br><span class="line">         modelLoader.buildLoadData(</span><br><span class="line">             cacheFile, helper.getWidth(), helper.getHeight(), helper.getOptions());</span><br><span class="line">     <span class="keyword">if</span> (loadData != <span class="literal">null</span> &amp;&amp; helper.hasLoadPath(loadData.fetcher.getDataClass())) &#123;</span><br><span class="line">       started = <span class="literal">true</span>;</span><br><span class="line">       loadData.fetcher.loadData(helper.getPriority(), <span class="built_in">this</span>);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> started;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>下面看下reschedule()方法源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reschedule</span><span class="params">()</span> &#123;</span><br><span class="line">  runReason = RunReason.SWITCH_TO_SOURCE_SERVICE;</span><br><span class="line">  callback.reschedule(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：重复调用 runWrapped() 方法，但此时的 runReason 已经变成了 SWITCH_TO_SOURCE_SERVICE，所以它会执行 runGenerators() 方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">runGenerators</span><span class="params">()</span> &#123;</span><br><span class="line">   currentThread = Thread.currentThread();</span><br><span class="line">   startFetchTime = LogTime.getLogTime();</span><br><span class="line">   <span class="type">boolean</span> <span class="variable">isStarted</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">while</span> (!isCancelled</span><br><span class="line">       &amp;&amp; currentGenerator != <span class="literal">null</span></span><br><span class="line">       &amp;&amp; !(isStarted = currentGenerator.startNext())) &#123;</span><br><span class="line">     stage = getNextStage(stage);</span><br><span class="line">     currentGenerator = getNextGenerator();</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (stage == Stage.SOURCE) &#123;</span><br><span class="line">       reschedule();</span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span> ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) &#123;</span><br><span class="line">     notifyFailed();</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>注：此时 currentGenerator 为 SourceGennerator 已经不为null。</p>
+<p>接着看SourceGennerator类中startNext：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startNext</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (dataToCache != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="type">Object</span> <span class="variable">data</span> <span class="operator">=</span> dataToCache;</span><br><span class="line">      dataToCache = <span class="literal">null</span>;</span><br><span class="line">      <span class="comment">// 存储到 DiskLruCache</span></span><br><span class="line">      cacheData(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sourceCacheGenerator != <span class="literal">null</span> &amp;&amp; sourceCacheGenerator.startNext()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sourceCacheGenerator = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    loadData = <span class="literal">null</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">started</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!started &amp;&amp; hasNextModelLoader()) &#123;</span><br><span class="line">      loadData = helper.getLoadData().get(loadDataListIndex++);</span><br><span class="line">      <span class="keyword">if</span> (loadData != <span class="literal">null</span></span><br><span class="line">          &amp;&amp; (helper.getDiskCacheStrategy().isDataCacheable(loadData.fetcher.getDataSource())</span><br><span class="line">              || helper.hasLoadPath(loadData.fetcher.getDataClass()))) &#123;</span><br><span class="line">        started = <span class="literal">true</span>;</span><br><span class="line">        /加载数据</span><br><span class="line">        startNextLoad(loadData);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> started;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>硬盘缓存时通过在 EngineJob 中的 DecodeJob 中完成的，先通过ResourcesCacheGenerator、DataCacheGenerator 看是否能从 DiskLruCache 拿到数据，如果不能，从SourceGenerator去解析数据，并把数据存储到 DiskLruCache 中，后面通过 DataCacheGenerator 的 startNext() 去分发 fetcher 。<br>最后会回调 EngineJob 的 onResourceReady() 方法了，该方法会加载图片，并把数据存到弱引用中</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handler-消息通讯机制详解</title>
+    <url>/relaxed/Handler-%E6%B6%88%E6%81%AF%E9%80%9A%E8%AE%AF%E6%9C%BA%E5%88%B6%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>Android开发中，Handler媒介机制十分常用，今天我们来详细聊一聊Handler通讯机制是如何实现的。</li>
+</ul>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="https://s1.ax1x.com/2022/05/05/Omb4mt.png"><img src="https://s1.ax1x.com/2022/05/05/Omb4mt.png" alt="Omb4mt.png"></a></p>
+<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>在多线程的应用场景中，将工作线程中需更新UI的操作信息 传递到 UI主线程，从而实现工作线程对UI线程的更新，最终实现异步消息的处理。</p>
+<h1 id="概念描述"><a href="#概念描述" class="headerlink" title="概念描述"></a>概念描述</h1><p>Handler、Message、MessageQueue、Looper相关概念如下图。</p>
+<!--MarkDown 不支持单元格合并，即使用Html -->
+<table>
+<!--this is title-->
+    <tr align = "center" bgcolor = "#91bdb6">
+        <td>概念</td>
+        <td>定义</td>
+        <td>作用</td>
+        <!-- <td>备注</td> -->
+    </tr>
+    <!--this is Main-->
+    <tr align="center">
+        <td>主线程<br/><font color = "#91bdb6">( UI线程、Main Thread )</font></td>
+        <td>系统首次启动，会创建主线程</td>
+        <td>处理UI相关操作<br/><font color = "#91bdb6">( 如：更新UI )</font></td>
+        <!-- <td rowspan="2">主线程与子线程<br/>通讯媒介Handler</td> -->
+    </tr>
+      <!--this is Thread-->
+    <tr align="center">
+        <td>子线程<br/><font color = "#91bdb6">（ 工作线程 ）</font></td>
+        <td>人为开启的线程</td>
+        <td>执行耗时任务<br/><font color = "#91bdb6">( 如 网络请求、数据加载等 )</font></td>
+    </tr>
+      <!--this is Message-->
+    <tr align="center">
+      <td>消息<br/><font color = "#91bdb6">（ Message ）</font></td>
+      <td>线程间通讯数据单元<br/><font color = "#91bdb6">（handler接收&处理消息对象）</font></td>
+      <td>存储业务操作信息<br/><font color = "#91bdb6">（ Message ）</font></td>
+    </tr>
+      <!--this is Message Queue-->
+    <tr align="center">
+        <td>消息队列<br/><font color = "#91bdb6">（ Message Queue ）</font></td>
+        <td>数据结构<br/><font color = "#91bdb6">（ 以时间顺序排列 ）</font></td>
+        <td>存储Handler发送的消息<br/><font color = "#91bdb6">（ Message ）</font></td>
+    </tr>
+      <!--this is Handler-->
+    <tr align="center">
+        <td>处理着<br/><font color = "#91bdb6">（ Handler ）</font></td>
+        <td>主线程与子线程通讯的媒介<br/>线程消息的处理者</td>
+        <td>将消息( Message ）添加到<br/>消息队列( Message Queue )中<br/> 处理循环器（ Looper ）分派的消息</td>
+    </tr>
+    <tr align="center">
+        <td>循环器<br/><font color = "#91bdb6">（ Looper ）</font></td>
+        <td>消息队列( Message Queue )<br/>与处理者 （ Handler ）<br/>通讯媒介</td>
+        <td>消息循环 即：<br/><font color = "#91bdb6"> 消息获取：循环取出消息队列<br/>（ Message Queue ）中的<br/>消息（ Message ）<br/> 消息分发：将取出来的消息<br/>（ Message ）发送给对应的<br/>处理者（ Handler ）</font></td>
+    </tr>
+</table>
+
+<h1 id="机制说明"><a href="#机制说明" class="headerlink" title="机制说明"></a>机制说明</h1><p>Handler消息传递机制:多个线程并发更新UI时，保证线程安全<br><a href="https://s1.ax1x.com/2022/05/06/OmxK4P.png"><img src="https://s1.ax1x.com/2022/05/06/OmxK4P.png" alt="示例图.png"></a><br>注：<a href="https://juejin.cn/post/6844903890224152584">图解Java线程安全</a></p>
+<h1 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h1><h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><ul>
+<li><p>异步通信( 主线程中创建 )</p>
+<blockquote>
+<blockquote>
+<p>处理者（ Handler ）对象</p>
+<blockquote>
+<p>注：Handler会自定绑定主线程中的Looper&amp;MessageQueue</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>处理器（ Looper ）对象</p>
+<blockquote>
+<p>注：Looper &amp; MessageQueue都是在主线程中</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>消息队列（ Message Queue ）对象</p>
+<blockquote>
+<p>注： 创建MessageQueue后，Looper会自动进入循环状态，有消息则循环取，没有，则阻塞状态，发现消息后会被唤醒继续循环读取。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><p>消息入队列</p>
+<blockquote>
+<p>工作线程中通过Handler的sendMessage()方法发送消息（ Message ）到消息队列（ MessageQueue ）中，这是消息完成入队列操作。</p>
+<blockquote>
+<p>注：此消息内容就是工作线程对UI主线程的操作</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>消息循环</p>
+<blockquote>
+<p>第一步：消息出队列：Looper循环取出消息队列（ MessageQueue ）中的消息（ Message ）交给第二步消息分发。<br>第二步：消息分发：Looper将取出来的消息（ Message ）发送给创建消息的处理者（ Handler ）</p>
+<blockquote>
+<p>注：循环器( Looper )循环取消息时，若发现消息队列（ MessageQueue ）中为空，则会线程阻塞，待又消息时再次被唤醒继续循环读取。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>消息处理</p>
+<blockquote>
+<p>处理者( Handler ) 在接收处理器（ Looper ）发送过来的消息（ Message ）会进行UI操作。</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://s1.ax1x.com/2022/05/06/OuFqzR.png"><img src="https://s1.ax1x.com/2022/05/06/OuFqzR.png" alt="示意图.png"></a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Android开发中，UI操作在主线程中进行，但是主线程又不能进行耗时操作，否则会阻塞线程，产生我们常见的ANR异常，所以常常把耗时操作放到其它子线程进行。如果在子线程中需要更新UI，一般是通过 Handler发送消息( message ），主线程接收消息并且进行相应的处理。以上就是Handler通讯消息传递机制的详解。</p>
+<h3 id="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"><a href="#如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻" class="headerlink" title="如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻"></a><font color=#9dc2af>如果觉得此文章对你有所帮助，👍🏻请点个赞👍🏻</font></h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Handler</tag>
       </tags>
   </entry>
 </search>
